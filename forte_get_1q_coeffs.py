@@ -57,6 +57,7 @@ h4_state_1 = {
     forte.Determinant([1,0,1,0],[0,1,0,1]):  np.sqrt(3)/6,  # abab/+-+-
     forte.Determinant([1,0,0,1],[0,1,1,0]): -np.sqrt(3)/6,  # abba/+--+
     forte.Determinant([0,1,1,0],[1,0,0,1]): -np.sqrt(3)/6,  # baab/-++-
+}
 ####################################################
 h2_geom = psi4.geometry("""
 0 1
