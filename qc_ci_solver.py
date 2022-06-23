@@ -9,13 +9,7 @@ from math import pi
 import json
 import os
 
-from qiskit import QuantumCircuit, execute, Aer, IBMQ
 from qiskit.providers.aer.noise import NoiseModel
-
-IBMQ.load_account()
-provider = IBMQ.get_provider(hub='ibm-q')
-
-# class One_qubit_ci_solver:
 
 def get_optimal_t(c_x, c_z):
     t = np.arctan(c_x / c_z)
@@ -24,16 +18,58 @@ def get_optimal_t(c_x, c_z):
     return t if e_plus <= e_minus else -t
 
 
-def get_amps_1q(counts):
-    for key in ['0', '1']:
-        if key not in counts.keys():
-            counts[key] = 0
-    c1sq = np.round(counts['0']/(counts['0'] + counts['1']), 16)
-    c2sq = np.round(counts['1']/(counts['0'] + counts['1']), 16)
-    return (c1sq, c2sq)
+def get_diag_element(occ, scalar_e, oei, tei):
+    """
+    occ: list of indices for occupied spin orbital
+    """
+    h = scalar_e
+    for i in occ:
+        h += oei[(i, i)]
+    for i in occ:
+        for j in occ:
+            h += 0.5 * tei[(i, j, i, j)]
+    return h
+
+
+def get_coeffs(r_path):
+    print('---------------------------------------------------------------')
+    additional_info = {}
+
+    if os.path.isfile(f'{r_path}/forte_ints.json'):
+        print(f'Find forte_ints.json in {r_path}')
+        with open(f'{r_path}/forte_ints.json', 'r') as read_file:
+            mol_data = json.load(read_file)
+
+        scalar_energy = mol_data['scalar_energy']['data']
+        oei = {(i, j): h_ij for [i, j, h_ij] in mol_data['oei']['data']}
+        tei = {(i, j, k, l): h_ijkl
+                for [i, j, k, l, h_ijkl] in mol_data['tei']['data']}
+
+        h_00 = get_diag_element([0, 1], scalar_energy, oei, tei)
+        h_11 = get_diag_element([2, 3], scalar_energy, oei, tei)
+        h_10 = tei[(0, 1, 2, 3)]
+        print(f'h_00:{h_00}, h_11:{h_11}, h_10:{h_10}')
+
+        c_0 = (h_00 + h_11) / 2.
+        c_z = np.real((h_00 - h_11) / 2.)
+        c_x = np.real(h_10)
+
+    elif os.path.isfile(f'{r_path}/oq_map.json'):
+        print(f'Find oq_map.json in {r_path}')
+        with open(f'{r_path}/oq_map.json', "r") as file:
+            oq_map_data = json.load(file)
+
+        c_0 = oq_map_data['c0']
+        c_z = oq_map_data['cz']
+        c_x = oq_map_data['cx']
+        additional_info['hamiltonian'] = oq_map_data['hamiltonian']
+        additional_info['scalar_e'] = oq_map_data['scalar_e']
+
+    return c_z, c_x, c_0, additional_info
 
 
 def prepare_1q_var_form(measure_basis, t):
+    from qiskit import QuantumCircuit
     cir = QuantumCircuit(1, 1)
     cir.ry(t, 0)
 
@@ -48,14 +84,17 @@ def prepare_1q_var_form(measure_basis, t):
         cir.measure(0, 0)
     else:
         print('Type error')
-
     return cir
 
-def get_statevec_1q(measure_basis, t):
-    simulator = Aer.get_backend('statevector_simulator')
+
+def get_statevec(measure_basis, t):
+    from qiskit import Aer
     cir = prepare_1q_var_form(measure_basis, t)
-    statevec = execute(cir, backend=simulator).result().get_statevector()
+    sim = Aer.get_backend('statevector_simulator')
+    statevec = sim.run(cir).result().get_statevector(cir, decimals=9)
+    print(f'Statevec: {statevec}')
     return statevec
+
 
 def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_model=None):
     """
@@ -85,26 +124,28 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
     elif isinstance(t, float):
         params = t
     else:
-        print('Input Type Not Supported')
+        print('Parameter Type Not Supported')
 
     noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(device_for_noise_model)
     model_name = None if device_for_noise_model == None else device_for_noise_model.name()
 
     if set_backend.name() == 'qasm_simulator':
-        print(f't = {params}, run on {set_backend}({model_name}), measure {measure_basis.upper()} {n_shots} shots.'
-        )
+        print(f'  t = {params:.6f}, run on {set_backend}({model_name}), measure {measure_basis.upper()} {n_shots} shots.')
     else:
-        print(f't = {params}, run on {set_backend}, measure {measure_basis.upper()} {n_shots} shots.'
-        )
+        print(f'  t = {params:.6f}, run on {set_backend}, measure {measure_basis.upper()} {n_shots} shots.')
 
     cir = prepare_1q_var_form(measure_basis, params)
 
+    # from qiskit import transpile
+    # cir = transpile(cir, set_backend, initial_layout=[3], optimization_level=3)
+
     cir_list = []
+    ### num of experiments in the list less than 75
     if (n_shots > 8192 and n_shots//8192 <= 75):
         cir_list.append([cir for i in range(n_shots//8192)])
     ### Note: the number of experiments supported by the device is 75
     elif (n_shots//8192 > 75 and (n_shots//8192)%75 > 0):
-        for k in range((n_shots//8192)//75):
+        for _ in range((n_shots//8192)//75):
             cirs_75 = [cir for i in range(75)]
             cir_list.append(cirs_75)
         cir_list.append([cir for i in range((n_shots//8192) % 75)])
@@ -113,14 +154,14 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
     counts = {'0':0, '1':0}
 
     if set_backend.name() == 'qasm_simulator':
-        job = execute(cir, backend=set_backend, shots=n_shots, noise_model=noise_model)
+        job = set_backend.run(cir, shots=n_shots, noise_model=noise_model)
         result = job.result()
         exp_counts = result.get_counts()
         for key in counts.keys():
             if key in exp_counts:
                 counts[key] += exp_counts[key]
     elif n_shots <= 8192:
-        job = execute(cir, backend=set_backend, shots=n_shots)
+        job = set_backend.run(cir, shots=n_shots)
         print(f'    job id: {job.job_id()}')
         result = job.result()
         exp_counts = result.get_counts()
@@ -133,7 +174,7 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
         num_exps = 0
         for cirs in cir_list:
             num_exps += len(cirs)
-            job = execute(cirs, backend=set_backend, shots=8192)
+            job = set_backend.run(cirs, shots=8192)
             print(f'    {len(cirs)*8192} shots, job id: {job.job_id()}')
             result = job.result()
             for idx in range(len(cirs)):
@@ -143,7 +184,7 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
                         counts[key] += exp_i_dict[key]
 
         remain_shots = n_shots - num_exps*8192
-        job_remainder = execute(cir, backend=set_backend, shots=remain_shots)
+        job_remainder = set_backend.run(cir, shots=remain_shots)
         print(f'    {remain_shots} shots, job id: {job_remainder.job_id()}')
         result_r = job_remainder.result()
         exp_r_counts = result_r.get_counts()
@@ -153,9 +194,16 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
 
     return counts
 
+def get_amps_1q(counts):
+    for key in ['0', '1']:
+        if key not in counts.keys():
+            counts[key] = 0
+    c1sq = np.round(counts['0'] / (counts['0'] + counts['1']), 16)
+    c2sq = np.round(counts['1'] / (counts['0'] + counts['1']), 16)
+    return (c1sq, c2sq)
 
 
-def compute_rdms(counts_z, counts_x, *params):
+def compute_rdms(counts_z, counts_x, c_z, c_x, c0):
     """
     Returns
     -------
@@ -163,32 +211,22 @@ def compute_rdms(counts_z, counts_x, *params):
     gamma1: list of lists
     gamma2: list of lists
     """
-    c_z, c_x, c0, key = params
-    print(f'\nComputing RDMs for {key} data:')
-    print(f'  counts_z = {counts_z},\n  counts_x = {counts_x}')
-
     (c1sq, c2sq) = get_amps_1q(counts_z)
     avg_z = c1sq - c2sq
 
     avg_x = get_amps_1q(counts_x)[0] - get_amps_1q(counts_x)[1]
 
-    print(f'     avg_z = {avg_z}, avg_x = {avg_x}')
-
     e = c_z*avg_z + c_x*avg_x + c0
-    print(f'     mea_e = {c_z*avg_z + c_x*avg_x}')
-    print(f'     ref_e = {e})')
+    print(f'\n   ==> Compute E_ref, g1 g2 <==')
+    print(f'  <Z> = {avg_z}\n  <X> = {avg_x}\n  Energy = {e}')
 
     g1_dict = {}
-    for a1 in [0,2]:
-        for a2 in [0,2]:
-            g1_dict[(a1,a2)] = 0.0
-    for b1 in [1,3]:
-        for b2 in [1,3]:
-            g1_dict[(b1,b2)] = 0.0
+    for i in [0, 1, 2, 3]:
+        for j in [0, 1, 2, 3]:
+            g1_dict[(i, j)] = 0.0
     g1_dict[(0,0)] = g1_dict[(1,1)] = c1sq
     g1_dict[(2,2)] = g1_dict[(3,3)] = c2sq
     gamma1 = [[i, j, g1_dict[(i,j)]] for (i,j) in g1_dict.keys()]
-    # print(f'\ngamma1 =\n{gamma1}')
 
     g2_dict = {}
     g2_dict[(0,1,0,1)] = g2_dict[(1,0,1,0)] =  c1sq
@@ -203,268 +241,188 @@ def compute_rdms(counts_z, counts_x, *params):
     g2_dict[(3,2,0,1)] = g2_dict[(2,3,1,0)] = -avg_10
 
     gamma2 = [[i, j, k, l, g2_dict[(i,j,k,l)]] for (i,j,k,l) in g2_dict.keys()]
-    # print(f'\ngamma2 =\n{gamma2}\n')
 
-    return e, gamma1, gamma2
-
-
-def run_single_r(oq_map_data,
-                 n_shots,
-                 set_backend,
-                 meas_fitter,
-                 device_for_noise_model=None):
-    """
-    Return
-    ------
-    rdms_dict: list of 2 dict (raw, calibrated)
-    nft_log: info of 3-points quadrature
-    """
-    c0 = oq_map_data['c0']
-    c_z = oq_map_data['cz']
-    c_x = oq_map_data['cx']
-
-    t_A = get_optimal_t(c_x, c_z)
-
-    print(f'\n   ==> 3-point analytical tomography fitting <== ')
-    raw_counts_list = [measure_1q('Z', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                       measure_1q('X', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-
-                       measure_1q('Z', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                       measure_1q('X', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-
-                       measure_1q('Z', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                       measure_1q('X', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                       ]
-
-
-    # Get the filter object to calibrate raw data
-    meas_filter = meas_fitter.filter
-    calibrated_counts_list = [meas_filter.apply(counts) for counts in raw_counts_list]
-
-    three_point_cts_dict = {'raw':{}, 'cal':{}}
-    three_point_cts_dict['t_points'] = [t_A, t_A+pi/3., t_A-pi/3.]
-    three_point_cts_dict['raw']['counts_list'] = raw_counts_list
-    three_point_cts_dict['cal']['counts_list'] = calibrated_counts_list
-
-    final_cts_dict = {'raw': {}, 'cal': {}}
-    # 3-point Fourier quadrature points (http://arxiv.org/abs/1904.03206)
-    # E(t) = a + b*cos(t) + c*sin(t)
-    for key in ['raw', 'cal']:
-        print(f'\n{key} data:')
-        counts_list = three_point_cts_dict[key]['counts_list']
-
-        avgs = [get_amps_1q(counts)[0] - get_amps_1q(counts)[1]  \
-                for counts in counts_list]
-        three_point_cts_dict[key]['avgs'] = avgs
-
-        es = [c_z*avgs[2*i] + c_x*avgs[2*i+1] for i in range(3)]
-        three_point_cts_dict[key]['es'] = es
-
-        print(f'avgs_{key} = {avgs}\nes_{key} = {es}')
-
-        A = np.matrix([[1, avgs[0], avgs[1]],
-                       [1, avgs[2], avgs[3]],
-                       [1, avgs[4], avgs[5]]])
-
-        coeffs = np.linalg.solve(A, es)
-        three_point_cts_dict[key]['abc_tuple'] = tuple(coeffs)
-
-        a, b, c = coeffs
-        t = get_optimal_t(c, b)
-        print(f'a = {a}, b = {b}, c = {c},\nt_opt = {t}')
-
-        final_cts_dict[key]['t_optimal'] = t
-        final_z_x_counts = \
-            [measure_1q('Z', t, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-             measure_1q('X', t, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model)]
-
-        final_cts_dict[key]['counts_list'] = [
-            meas_filter.apply(counts) for counts in final_z_x_counts] if key == 'cal' else final_z_x_counts
-
-    nft_log = {'3_point_info': three_point_cts_dict,
-               'final_t_info': final_cts_dict}
-
-    rdms_dict = {}
-    for key in final_cts_dict.keys():
-        counts_list = final_cts_dict[key]['counts_list']
-        e, gamma1, gamma2 = compute_rdms(*counts_list, c_z, c_x, c0, key)
-
-        rdms = {
-            'energy': {'data': e, 'description': 'energy'},
-            'gamma1': {
-                'data': gamma1,
-                'description': 'one-body density matrix as a list of tuples (i,j,<i^ j>)'
-            },
-            'gamma2': {
-                'data': gamma2,
-                'description': 'two-body density matrix as a list of tuples (i,j,k,l,<i^ j^ l k>)',
-            }
+    rdms_dict = {
+        'energy': {'data': e, 'description': 'energy'},
+        'gamma1': {
+            'data': gamma1,
+            'description': 'one-body density matrix as a list of tuples (i,j,<i^ j>)'
+        },
+        'gamma2': {
+            'data': gamma2,
+            'description': 'two-body density matrix as a list of tuples (i,j,k,l,<i^ j^ l k>)',
         }
-        rdms_dict[key] = rdms
+    }
+    return rdms_dict
 
-    return rdms_dict, nft_log
 
-
-def get_meas_fitter_object(n_shots, set_backend, device_for_noise_model=None):
+def get_meas_fitter_object(options):
     ## Import measurement calibration functions
     from qiskit.ignis.mitigation.measurement import complete_meas_cal, CompleteMeasFitter
-    import pickle
+
+    n_shots = options['n_shots']
+    set_backend = options['backend']
+    if 'device_for_noise_model' in options.keys():
+        device_for_noise_model = options['device_for_noise_model']
+    else:
+        device_for_noise_model = None
 
     print(f'\n   ==> Run Calibration circuits <== ')
-    print( 'n_shots       = %10d' % n_shots)
-    print(f'Backend       = {set_backend}')
-    ### Measurement Error Mitigation
+    print('n_shots       = %10d' % n_shots)
+    print(f'Backend       =      {set_backend}')
+
     meas_calibs, state_labels = complete_meas_cal(qubit_list=[0], circlabel='mea_cali')
     if set_backend.name() == 'qasm_simulator':
-        noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(
-            device_for_noise_model)
-        print(f'Noise model   = {noise_model}(Backend needs to be QASM if set)')
-        job = execute(meas_calibs,
-                        backend=set_backend,
-                        shots=n_shots,
-                        noise_model=noise_model)
+        noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(device_for_noise_model)
+        print(f'Noise model   =      {device_for_noise_model.name()}\n{noise_model}')
+        job = set_backend.run(meas_calibs, shots=n_shots, noise_model=noise_model)
     else:
-        job = execute(meas_calibs, backend=set_backend, shots=n_shots)
+        job = set_backend.run(meas_calibs, shots=n_shots)
 
     cal_results = job.result()
 
     # Calculate the calibration matrix
-    meas_fitter = CompleteMeasFitter(cal_results,
-                                     state_labels,
-                                     circlabel='mea_cali')
-    print(f'Calibration matrix =\n{meas_fitter.cal_matrix}\n')
-    # with open('meas_fitter', 'w') as file:
-    #     pickle.dump(meas_fitter, file, protocol=None, *, fix_imports=True, buffer_callback=None)
+    fitter = CompleteMeasFitter(cal_results, state_labels, circlabel='mea_cali')
+    print(f'Calibration matrix =\n{fitter.cal_matrix}\n')
+    meas_filter = fitter.filter
 
-    return meas_fitter
+    return meas_filter
 
 
-def run_pec(wkdir= os.getcwd()):
+def run_one_vqe(options):
+    c_z, c_x, c_0 = options['cz_cx_c0']
+    n_shots = options['n_shots']
+    set_backend = options['backend']
+    if 'device_for_noise_model' in options.keys():
+        device_for_noise_model = options['device_for_noise_model']
+    else:
+        device_for_noise_model = None
 
-    """Get backend(s)"""
-    # aer_statevec_sim = Aer.get_backend('statevector_simulator')
-    qasm_sim_aer = Aer.get_backend('qasm_simulator')
-    # ibmq_qasm_sim = provider.get_backend('ibmq_qasm_simulator')
-    ### QV32
-    # device_santiago = provider.get_backend('ibmq_santiago')
-    # device_manila = provider.get_backend('ibmq_manila')
-    # device_bogota = provider.get_backend('ibmq_bogota')  #
-    ### QV16
-    # device_quito = provider.get_backend('ibmq_quito')  #
-    device_belem = provider.get_backend('ibmq_belem')  #
-    ### QV8
-    # device_lima = provider.get_backend('ibmq_lima')
-    ### 1 qubit
-    # device_armonk = provider.get_backend('ibmq_armonk')
+    t_A = get_optimal_t(c_x, c_z)
+    print(f'c_z = {c_z:.9f}\nc_x = {c_x:.9f}\nc_0 = {c_0:.9f}\n')
+    print(f'   ==> Run 3-point Fourier quadrature <==')
+    print(f'  t_A = {t_A:.9f}\n    <Z>_A = cos(t_A) = {np.cos(t_A):.9f}\n    <X>_A = sin(t_A) = {np.sin(t_A):.9f}\n')
 
-    ###### Device:
-    # set_backend = device_belem
-    # device_for_noise_model = None
-    ###### QASM w/ wo/ noise
-    set_backend = qasm_sim_aer
-    device_for_noise_model = None
-    ### build noise model from backend properties
-    # device_for_noise_model = device_belem
-    # print(NoiseModel.from_backend(device_belem))
-    ######
+    # 3-point Fourier quadrature points (http://arxiv.org/abs/1904.03206)
+    # E(t) = a + b*cos(t) + c*sin(t)
+    counts_list = [measure_1q('Z', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   measure_1q('X', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
 
-    # meas_fitter = get_meas_fitter_object(n_shots, set_backend, device_for_noise_model=device_for_noise_model)
+                   measure_1q('Z', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   measure_1q('X', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
 
-    n_shots = 5000
+                   measure_1q('Z', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   measure_1q('X', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   ]
 
-    device_tag = set_backend.name().rstrip('simulator').rstrip('_') if 'simulator' in set_backend.name() \
-        else set_backend.name().lstrip('ibmq').lstrip('_')
-
-    noise_model_tag = '-'+device_for_noise_model.name().lstrip('ibmq').lstrip('_') if device_for_noise_model != None else ''
+    if 'do_readout_calibration' in options.keys():
+        print('Calibrate raw counts')
+        calibration_info = {'3ts_counts_raw': counts_list}
+        meas_filter = options['filter']
+        # Use filter object to calibrate raw data
+        counts_list = [meas_filter.apply(counts) for counts in counts_list.copy()]
+        calibration_info['3ts_counts_cal'] = counts_list
 
 
-    rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , 1.205, 1.21 , 1.215,     
-             1.22, 1.3 , 1.45, 1.6 ,  1.9 , 2.5 , 2.95, 6.  ] 
+    avgs = [get_amps_1q(counts)[0] - get_amps_1q(counts)[1] for counts in counts_list]
+    es = [c_z * avgs[2 * i] + c_x * avgs[2 * i + 1] for i in range(3)]
 
-    rvals_dict = {'cas': rvals, 'rhf': rvals[:11], 'uno': rvals[11:]}
+    A = np.matrix([[1, avgs[0], avgs[1]],
+                   [1, avgs[2], avgs[3]],
+                   [1, avgs[4], avgs[5]]])
 
-    maindir = "/home/renke/computations/H2"
-    for r, tag in zip([0.75, 6.], ['rhf', 'uno']):  # for E-N_shots plot
-        coeff_path = f'{maindir}/{tag}/cc-pV5Z/{r}/oq_map.json'
-        with open(coeff_path, "r") as file:
-            oq_map_data = json.load(file)
+    print(f'\nSolve linear equation E(t) = a + b*cos(t) + c*sin(t):')
+    a, b, c = np.linalg.solve(A, es)
+    print(f'  a = {a}, b = {b}, c = {c}')
 
-        c0 = oq_map_data['c0']
-        c_z = oq_map_data['cz']
-        c_x = oq_map_data['cx']
-        ham = oq_map_data['hamiltonian']
-        scalar_e = oq_map_data['scalar_e']
+    t_opt = get_optimal_t(c, b)
+    print(f'\n  t_opt = {t_opt:.9f}\n    <Z>_opt = cos(t_opt) = {np.cos(t_opt):.9f}\n    <X>_opt = sin(t_opt) = {np.sin(t_opt):.9f}\n')
 
-        evals, evec = np.linalg.eigh(ham)
-        ## Add scalar energies
-        evals += [scalar_e] * len(evals)
+    print('Measure Z, X on circuit parametrized by t_opt:')
+    counts_z = measure_1q('Z', t_opt, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model)
+    counts_x = measure_1q('X', t_opt, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model)
 
-        e_analytic = -np.sqrt(c_z**2 + c_x**2) + c0
+    if 'do_readout_calibration' in options.keys():
+        calibration_info['topt_counts_z_raw'] = counts_z
+        calibration_info['topt_counts_x_raw'] = counts_x
+        counts_z = meas_filter.apply(counts_z)
+        counts_x = meas_filter.apply(counts_x)
+        calibration_info['topt_counts_z_cal'] = counts_z
+        calibration_info['topt_counts_x_cal'] = counts_x
+        with open('calibration_info.json', 'w') as file:
+            json.dump(calibration_info, file, indent=4)
 
-        print(f'\n\n   ==> Exact results for r = {r} ({tag}) <== ')
-        print(f'evals: {evals}\nevec: {evec}\ne_analytic: {e_analytic}')
-        print(f'    e_analytic-evals[0] = {e_analytic-evals[0]}\n\n')
+    print(f'  measure Z: {counts_z})')
+    print(f'  measure X: {counts_x})')
 
-        for n_shots in [1e3, 1e4, 1e5, 1e6]:
-            rdm_path_name = f'{maindir}/EA-new/{r}-{tag}/{int(n_shots)}'
+    rdms_dict = compute_rdms(counts_z, counts_x, c_z, c_x, c_0)
 
-            meas_fitter = get_meas_fitter_object(n_shots, set_backend, device_for_noise_model=device_for_noise_model)
-            rdms_dict, _ = run_single_r(
-                oq_map_data,
-                n_shots,
-                set_backend,
-                meas_fitter,
-                device_for_noise_model=device_for_noise_model)
-
-            rdms = rdms_dict['raw']
-            e_vqe = rdms['energy']['data']
-
-            if not os.path.exists(rdm_path_name):
-                os.makedirs(rdm_path_name)
-
-            with open(f'{rdm_path_name}/rdms.json', 'w') as file:
-                json.dump(rdms, file, indent=4)
-            with open(f'{maindir}/EA/{r}-{tag}/ea.dat', 'a') as file:
-                file.write(f'{int(n_shots)}     {e_vqe}\n')
+    return rdms_dict
 
 
 
-    # rdm_path_name = f'{wkdir}/cc-pV5Z/{device_tag}{noise_model_tag}_{n_shots}_{i}'
+def run_pec():
 
-    # for r in rvals:
-    #     coeff_path = f'{wkdir}/cc-pV5Z/{r}/oq_map.json'
+    from qiskit import Aer, IBMQ
+    IBMQ.load_account()
+    # provider = IBMQ.get_provider(hub='ibm-q')
+    provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
 
-    #     rdms_dict, nft_log = run_single_r(oq_map_data, n_shots, set_backend, meas_fitter, device_for_noise_model=device_for_noise_model)
+    options = {
+        'n_shots': 20000,
+        ### Aer.get_backend('qasm_simulator')      provider.get_backend('ibmq_belem')
+        'backend': provider.get_backend('ibmq_belem'),
+        'do_readout_calibration': True,
+        # 'device_for_noise_model': provider.get_backend('ibmq_belem'),
+    }
+    if 'do_readout_calibration' in options.keys():
+        options['filter'] = get_meas_fitter_object(options)
 
-    #     nft_log_folder = f'{rdm_path_name}/OPTLOG'
-    #     if not os.path.exists(nft_log_folder):
-    #         os.makedirs(nft_log_folder)
-    #     os.chdir(nft_log_folder)
-    #     with open(f'r_{r}.json', 'w') as info_file:
-    #         json.dump(nft_log, info_file, indent=4)
-    #     os.chdir(wkdir)
+    options['backend_name'] = options['backend'].name().rstrip('simulator').rstrip('_') \
+        if 'simulator' in options['backend'].name() \
+        else options['backend'].name().lstrip('ibmq').lstrip('_')
 
-    #     for key in rdms_dict.keys():
-    #         rdms = rdms_dict[key]
+    options['noise_model_name'] = options['device_for_noise_model'].name().lstrip('ibmq').lstrip('_') \
+        if 'device_for_noise_model' in options.keys() else ''
 
-    #         r_folder = f'{rdm_path_name}/{key}/r_{r}'
 
-    #         if not os.path.exists(r_folder):
-    #             os.makedirs(r_folder)
+    rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , 1.205, 1.21 , 1.215,
+             1.22, 1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
 
-    #         e_vqe = rdms_dict[key]['energy']['data']
-    #         with open(f'{rdm_path_name}/{key}/pec.dat', 'a') as file:
-    #             file.write(f'{r}     {e_vqe}\n')
+    maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
+    # maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
 
-    #         os.chdir(r_folder)
+    for r in [0.6]:
+        r_path = f'{maindir}/{r}'
+        c_z, c_x, c_0, additional_info = get_coeffs(r_path)
+        options['cz_cx_c0'] = (c_z, c_x, c_0)
 
-    #         with open('rdms.json', 'w') as file:
-    #             json.dump(rdms, file, indent=4)
+        rdm_path = f'{maindir}/{options["backend_name"]}_{options["noise_model_name"]}/{r}'
+        if not os.path.exists(rdm_path):
+            os.makedirs(rdm_path)
 
-    #         os.chdir(wkdir)
+        os.chdir(rdm_path)
+
+        rdms_dict = run_one_vqe(options)
+        e_vqe = rdms_dict['energy']['data']
+
+        with open(f'rdms.json', 'w') as file:
+            json.dump(rdms_dict, file, indent=4)
+        with open(f'../vqe.dat', 'a') as file:
+            file.write(f'{e_vqe}\n')
+
+        os.chdir(maindir)
+
+
+        if 'hamiltonian' in additional_info.keys():
+            evals, _ = np.linalg.eigh(additional_info['hamiltonian'])
+            ## Add scalar energies
+            evals += [additional_info['scalar_e']] * len(evals)
+            e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0
+            print(f'\n   ==> (oq_map.json) Exact results for r = {r} <== ')
+            print(f'evals = {evals}\ne_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = {e_analytic}')
+            print(f'e_analytic - evals[0] = {e_analytic-evals[0]:.12f}\n')
 
 
 if __name__ == "__main__":
-    for i in [1]:
-        # print(f'\nSet {i}\n')
-        run_pec()
+    run_pec()
