@@ -10,6 +10,7 @@ import json
 import os
 
 from qiskit.providers.aer.noise import NoiseModel
+from qiskit import execute
 
 def get_optimal_t(c_x, c_z):
     t = np.arctan(c_x / c_z)
@@ -96,7 +97,7 @@ def get_statevec(measure_basis, t):
     return statevec
 
 
-def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_model=None):
+def measure_1q(measure_basis, t, options):
     """
     Params
     ------
@@ -107,17 +108,24 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
                 qiskit.providers.ibmq.ibmqbackend.IBMQBackend
         eg. set_backend = Aer.get_backend('qasm_simulator')
     
-    n_shots: int or float, default: 8192
+    n_shots: int or float
     
     device_for_noise_model: qiskit.providers.ibmq.ibmqbackend.IBMQBackend,
         eg. device_for_noise_model = provider.get_backend('ibmq_santiago') 
-    
     
     Returns
     -------
     counts: dict
     """
-    n_shots = int(n_shots)
+    n_shots = int(options['n_shots'])
+    set_backend = options['backend']
+    if 'device_for_noise_model' in options.keys():
+        device_for_noise_model = options['device_for_noise_model']
+        noise_model = NoiseModel.from_backend(device_for_noise_model)
+        model_name = device_for_noise_model.name()
+    else:
+        noise_model = None
+        model_name = ''
 
     if isinstance(t, list) or isinstance(t, np.ndarray) or isinstance(t, tuple):
         params = t[0]
@@ -126,71 +134,71 @@ def measure_1q(measure_basis, t, set_backend, n_shots=8192, device_for_noise_mod
     else:
         print('Parameter Type Not Supported')
 
-    noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(device_for_noise_model)
-    model_name = None if device_for_noise_model == None else device_for_noise_model.name()
-
-    if set_backend.name() == 'qasm_simulator':
-        print(f'  t = {params:.6f}, run on {set_backend}({model_name}), measure {measure_basis.upper()} {n_shots} shots.')
-    else:
-        print(f'  t = {params:.6f}, run on {set_backend}, measure {measure_basis.upper()} {n_shots} shots.')
+    print(f'  t = {params:.6f}, run on {set_backend} {model_name}, measure {measure_basis.upper()} {n_shots} shots.')
 
     cir = prepare_1q_var_form(measure_basis, params)
 
     # from qiskit import transpile
     # cir = transpile(cir, set_backend, initial_layout=[3], optimization_level=3)
 
-    cir_list = []
-    ### num of experiments in the list less than 75
-    if (n_shots > 8192 and n_shots//8192 <= 75):
-        cir_list.append([cir for i in range(n_shots//8192)])
-    ### Note: the number of experiments supported by the device is 75
-    elif (n_shots//8192 > 75 and (n_shots//8192)%75 > 0):
-        for _ in range((n_shots//8192)//75):
-            cirs_75 = [cir for i in range(75)]
-            cir_list.append(cirs_75)
-        cir_list.append([cir for i in range((n_shots//8192) % 75)])
+    # cir_list = []
+    # ### num of experiments in the list less than 75
+    # if (n_shots > 8192 and n_shots//8192 <= 75):
+    #     cir_list.append([cir for i in range(n_shots//8192)])
+    # ### Note: the number of experiments supported by the device is 75
+    # elif (n_shots//8192 > 75 and (n_shots//8192)%75 > 0):
+    #     for _ in range((n_shots//8192)//75):
+    #         cirs_75 = [cir for i in range(75)]
+    #         cir_list.append(cirs_75)
+    #     cir_list.append([cir for i in range((n_shots//8192) % 75)])
 
+    job = execute(cir, shots=n_shots, backend=set_backend, noise_model=noise_model) \
+        if set_backend.name() == 'qasm_simulator' else execute(cir, backend=set_backend, shots=n_shots)
+    result = job.result()
+    counts = result.get_counts()
+    for key in ['0', '1']:
+        if key not in counts.keys():
+            counts[key] = 0
 
-    counts = {'0':0, '1':0}
+    # counts = {'0': 0, '1': 0}
+    # if set_backend.name() == 'qasm_simulator':
+    #     job = execute(cir, shots=n_shots, backend=set_backend, noise_model=noise_model)
+    #     result = job.result()
+    #     exp_counts = result.get_counts()
+    #     for key in counts.keys():
+    #         if key in exp_counts:
+    #             counts[key] += exp_counts[key]
+    # elif n_shots <= 8192:
+    #     job = execute(cir, shots=n_shots, backend=set_backend)
+    #     print(f'    job id: {job.job_id()}')
+    #     result = job.result()
+    #     exp_counts = result.get_counts()
+    #     for key in counts.keys():
+    #         if key in exp_counts:
+    #             counts[key] += exp_counts[key]
+    # else:
+    #     ### when n_shots exceeds 8192 limit, use increase-shot trick
+    #     ### the number of experiments supported by the device is 75
+    #     num_exps = 0
+    #     for cirs in cir_list:
+    #         num_exps += len(cirs)
+    #         job = execute(cirs, shots=8192, backend=set_backend)
+    #         print(f'    {len(cirs)*8192} shots, job id: {job.job_id()}')
+    #         result = job.result()
+    #         for idx in range(len(cirs)):
+    #             exp_i_dict = result.get_counts(cirs[idx])
+    #             for key in counts.keys():
+    #                 if key in exp_i_dict.keys():
+    #                     counts[key] += exp_i_dict[key]
 
-    if set_backend.name() == 'qasm_simulator':
-        job = set_backend.run(cir, shots=n_shots, noise_model=noise_model)
-        result = job.result()
-        exp_counts = result.get_counts()
-        for key in counts.keys():
-            if key in exp_counts:
-                counts[key] += exp_counts[key]
-    elif n_shots <= 8192:
-        job = set_backend.run(cir, shots=n_shots)
-        print(f'    job id: {job.job_id()}')
-        result = job.result()
-        exp_counts = result.get_counts()
-        for key in counts.keys():
-            if key in exp_counts:
-                counts[key] += exp_counts[key]
-    else:
-        ### when n_shots exceeds 8192 limit, use increase-shot trick
-        ### the number of experiments supported by the device is 75
-        num_exps = 0
-        for cirs in cir_list:
-            num_exps += len(cirs)
-            job = set_backend.run(cirs, shots=8192)
-            print(f'    {len(cirs)*8192} shots, job id: {job.job_id()}')
-            result = job.result()
-            for idx in range(len(cirs)):
-                exp_i_dict = result.get_counts(cirs[idx])
-                for key in counts.keys():
-                    if key in exp_i_dict.keys():
-                        counts[key] += exp_i_dict[key]
-
-        remain_shots = n_shots - num_exps*8192
-        job_remainder = set_backend.run(cir, shots=remain_shots)
-        print(f'    {remain_shots} shots, job id: {job_remainder.job_id()}')
-        result_r = job_remainder.result()
-        exp_r_counts = result_r.get_counts()
-        for key in counts.keys():
-            if key in exp_r_counts:
-                counts[key] += exp_r_counts[key]
+    #     remain_shots = n_shots - num_exps*8192
+    #     job_remainder = execute(cir, shots=remain_shots, backend=set_backend)
+    #     print(f'    {remain_shots} shots, job id: {job_remainder.job_id()}')
+    #     result_r = job_remainder.result()
+    #     exp_r_counts = result_r.get_counts()
+    #     for key in counts.keys():
+    #         if key in exp_r_counts:
+    #             counts[key] += exp_r_counts[key]
 
     return counts
 
@@ -203,30 +211,21 @@ def get_amps_1q(counts):
     return (c1sq, c2sq)
 
 
-def compute_rdms(counts_z, counts_x, c_z, c_x, c0):
+def compute_rdms(c1sq, c2sq, avg_x):
     """
-    Returns
-    -------
-    e: float
     gamma1: list of lists
     gamma2: list of lists
     """
-    (c1sq, c2sq) = get_amps_1q(counts_z)
-    avg_z = c1sq - c2sq
+    nso = 4
+    g1 = np.zeros([4, 4])
 
-    avg_x = get_amps_1q(counts_x)[0] - get_amps_1q(counts_x)[1]
+    for i in [0, 1]:
+        g1[i, i] = c1sq
+    for i in [2, 3]:
+        g1[i, i] = c2sq
 
-    e = c_z*avg_z + c_x*avg_x + c0
-    print(f'\n   ==> Compute E_ref, g1 g2 <==')
-    print(f'  <Z> = {avg_z}\n  <X> = {avg_x}\n  Energy = {e}')
-
-    g1_dict = {}
-    for i in [0, 1, 2, 3]:
-        for j in [0, 1, 2, 3]:
-            g1_dict[(i, j)] = 0.0
-    g1_dict[(0,0)] = g1_dict[(1,1)] = c1sq
-    g1_dict[(2,2)] = g1_dict[(3,3)] = c2sq
-    gamma1 = [[i, j, g1_dict[(i,j)]] for (i,j) in g1_dict.keys()]
+    # g1 is diagonal, only save non-zero elements
+    gamma1 = [[i, i, g1[i,i]] for i in range(nso)]
 
     g2_dict = {}
     g2_dict[(0,1,0,1)] = g2_dict[(1,0,1,0)] =  c1sq
@@ -243,7 +242,6 @@ def compute_rdms(counts_z, counts_x, c_z, c_x, c0):
     gamma2 = [[i, j, k, l, g2_dict[(i,j,k,l)]] for (i,j,k,l) in g2_dict.keys()]
 
     rdms_dict = {
-        'energy': {'data': e, 'description': 'energy'},
         'gamma1': {
             'data': gamma1,
             'description': 'one-body density matrix as a list of tuples (i,j,<i^ j>)'
@@ -275,9 +273,9 @@ def get_meas_fitter_object(options):
     if set_backend.name() == 'qasm_simulator':
         noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(device_for_noise_model)
         print(f'Noise model   =      {device_for_noise_model.name()}\n{noise_model}')
-        job = set_backend.run(meas_calibs, shots=n_shots, noise_model=noise_model)
+        job = execute(meas_calibs, shots=n_shots, backend=set_backend, noise_model=noise_model)
     else:
-        job = set_backend.run(meas_calibs, shots=n_shots)
+        job = execute(meas_calibs, shots=n_shots, backend=set_backend)
 
     cal_results = job.result()
 
@@ -291,32 +289,26 @@ def get_meas_fitter_object(options):
 
 def run_one_vqe(options):
     c_z, c_x, c_0 = options['cz_cx_c0']
-    n_shots = options['n_shots']
-    set_backend = options['backend']
-    if 'device_for_noise_model' in options.keys():
-        device_for_noise_model = options['device_for_noise_model']
-    else:
-        device_for_noise_model = None
-
-    t_A = get_optimal_t(c_x, c_z)
     print(f'c_z = {c_z:.9f}\nc_x = {c_x:.9f}\nc_0 = {c_0:.9f}\n')
+
     print(f'   ==> Run 3-point Fourier quadrature <==')
+    t_A = get_optimal_t(c_x, c_z)
     print(f'  t_A = {t_A:.9f}\n    <Z>_A = cos(t_A) = {np.cos(t_A):.9f}\n    <X>_A = sin(t_A) = {np.sin(t_A):.9f}\n')
 
     # 3-point Fourier quadrature points (http://arxiv.org/abs/1904.03206)
     # E(t) = a + b*cos(t) + c*sin(t)
-    counts_list = [measure_1q('Z', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                   measure_1q('X', t_A, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+    counts_list = [measure_1q('Z', t_A, options),
+                   measure_1q('X', t_A, options),
 
-                   measure_1q('Z', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                   measure_1q('X', t_A+pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   measure_1q('Z', t_A+pi/3., options),
+                   measure_1q('X', t_A+pi/3., options),
 
-                   measure_1q('Z', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
-                   measure_1q('X', t_A-pi/3., set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model),
+                   measure_1q('Z', t_A-pi/3., options),
+                   measure_1q('X', t_A-pi/3., options),
                    ]
 
     if 'do_readout_calibration' in options.keys():
-        print('Calibrate raw counts')
+        print('\nCalibrate 6 raw counts for 3-point quadrature')
         calibration_info = {'3ts_counts_raw': counts_list}
         meas_filter = options['filter']
         # Use filter object to calibrate raw data
@@ -339,41 +331,62 @@ def run_one_vqe(options):
     print(f'\n  t_opt = {t_opt:.9f}\n    <Z>_opt = cos(t_opt) = {np.cos(t_opt):.9f}\n    <X>_opt = sin(t_opt) = {np.sin(t_opt):.9f}\n')
 
     print('Measure Z, X on circuit parametrized by t_opt:')
-    counts_z = measure_1q('Z', t_opt, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model)
-    counts_x = measure_1q('X', t_opt, set_backend, n_shots=n_shots, device_for_noise_model=device_for_noise_model)
+    counts_z = measure_1q('Z', t_opt, options)
+    counts_x = measure_1q('X', t_opt, options)
+
+    def op_averaging(counts_z, counts_x):
+        print(f'\nEstimate expectations from counts:')
+        (c1sq, c2sq) = get_amps_1q(counts_z)
+        avg_z = c1sq - c2sq
+        avg_x = get_amps_1q(counts_x)[0] - get_amps_1q(counts_x)[1]
+        e = c_z*avg_z + c_x*avg_x + c_0
+        print(f'  <Z> = {avg_z}\n  <X> = {avg_x}\n  Energy = {e}')
+        return c1sq, c2sq, avg_x, e
+
+    c1sq, c2sq, avg_x, e = op_averaging(counts_z, counts_x)
 
     if 'do_readout_calibration' in options.keys():
         calibration_info['topt_counts_z_raw'] = counts_z
         calibration_info['topt_counts_x_raw'] = counts_x
+        print('\nCalibrate 2 raw counts for final energy')
         counts_z = meas_filter.apply(counts_z)
         counts_x = meas_filter.apply(counts_x)
         calibration_info['topt_counts_z_cal'] = counts_z
         calibration_info['topt_counts_x_cal'] = counts_x
+        c1sq, c2sq, avg_x, e = op_averaging(counts_z, counts_x)
+
         with open('calibration_info.json', 'w') as file:
             json.dump(calibration_info, file, indent=4)
 
     print(f'  measure Z: {counts_z})')
     print(f'  measure X: {counts_x})')
 
-    rdms_dict = compute_rdms(counts_z, counts_x, c_z, c_x, c_0)
+    vqe_result = compute_rdms(c1sq, c2sq, avg_x)
+    vqe_result['energy'] = {'data': e, 'description': 'energy'}
 
-    return rdms_dict
+    vqe_result['t_A'] = t_A
+    vqe_result['t_exp'] = t_opt
+    vqe_result['c1sq'] = c1sq
+    vqe_result['c2sq'] = c2sq
+    vqe_result['avg_x'] = avg_x
+
+    return vqe_result
 
 
 
-def run_pec():
+def run_pec(i=0):
 
     from qiskit import Aer, IBMQ
     IBMQ.load_account()
-    # provider = IBMQ.get_provider(hub='ibm-q')
-    provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
+    provider = IBMQ.get_provider(hub='ibm-q')
+    # provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
 
     options = {
         'n_shots': 20000,
         ### Aer.get_backend('qasm_simulator')      provider.get_backend('ibmq_belem')
-        'backend': provider.get_backend('ibmq_belem'),
+        'backend': provider.get_backend('ibmq_armonk'),
         'do_readout_calibration': True,
-        # 'device_for_noise_model': provider.get_backend('ibmq_belem'),
+        # 'device_for_noise_model': provider.get_backend('ibmq_armonk'),
     }
     if 'do_readout_calibration' in options.keys():
         options['filter'] = get_meas_fitter_object(options)
@@ -382,34 +395,39 @@ def run_pec():
         if 'simulator' in options['backend'].name() \
         else options['backend'].name().lstrip('ibmq').lstrip('_')
 
-    options['noise_model_name'] = options['device_for_noise_model'].name().lstrip('ibmq').lstrip('_') \
+    options['noise_model_name'] = '_'+options['device_for_noise_model'].name().lstrip('ibmq').lstrip('_') \
         if 'device_for_noise_model' in options.keys() else ''
 
 
-    rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , 1.205, 1.21 , 1.215,
-             1.22, 1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
+    rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , \
+            1.205, 1.21 , 1.215, 1.22, \
+            1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
 
     maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
     # maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
 
-    for r in [0.6]:
+    for r in [1.45, 1.6, 1.9, 2.5, 2.95, 6.]:
         r_path = f'{maindir}/{r}'
         c_z, c_x, c_0, additional_info = get_coeffs(r_path)
         options['cz_cx_c0'] = (c_z, c_x, c_0)
 
-        rdm_path = f'{maindir}/{options["backend_name"]}_{options["noise_model_name"]}/{r}'
+        rdm_path = f'{maindir}/{options["backend_name"]}{options["noise_model_name"]}_{i}/{r}'
         if not os.path.exists(rdm_path):
             os.makedirs(rdm_path)
 
         os.chdir(rdm_path)
 
-        rdms_dict = run_one_vqe(options)
-        e_vqe = rdms_dict['energy']['data']
+        vqe_result = run_one_vqe(options)
 
-        with open(f'rdms.json', 'w') as file:
-            json.dump(rdms_dict, file, indent=4)
         with open(f'../vqe.dat', 'a') as file:
-            file.write(f'{e_vqe}\n')
+            file.write(
+                f"{r}    {vqe_result['energy']['data']:.9f}  {vqe_result['t_A']:.7f}  {vqe_result['t_exp']:.7f}  {vqe_result['c1sq']:.9f}  {vqe_result['c2sq']:.9f}  {vqe_result['avg_x']:.9f} \n"
+            )
+
+        rdms = {key: vqe_result[key] for key in ['energy', 'gamma1', 'gamma2']}
+        with open(f'rdms.json', 'w') as file:
+            json.dump(rdms, file, indent=2)
+        print(f'Save rdms.json to {os.getcwd()}')
 
         os.chdir(maindir)
 
@@ -425,4 +443,5 @@ def run_pec():
 
 
 if __name__ == "__main__":
-    run_pec()
+    for i in range(10):
+        run_pec(i)
