@@ -1,0 +1,908 @@
+### one set, generate wrong rdms.json giving positive energies in dsrg computations.
+
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibmq_armonk
+Calibration matrix =
+[[0.97595 0.03525]
+ [0.02405 0.96475]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+  t = -0.175140, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.175140, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.872057, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.872057, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.222338, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.222338, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -2.220446049250313e-16, b = -0.9753315962732311, c = 0.17258813211389312
+
+  t_opt = -0.175140281
+    <Z>_opt = cos(t_opt) = 0.984702105
+    <X>_opt = sin(t_opt) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.175140, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9232
+  <X> = -0.14100000000000001
+  Energy = -1.0656405177254527
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9694908117154672
+  <X> = -0.16179440842882647
+  Energy = -1.1143782771178277
+  measure Z: {'0': 19694.90811715467, '1': 305.0918828453277})
+  measure X: {'0': 8382.055915711735, '1': 11617.944084288265})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+  t = -0.190031, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.190031, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.857166, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.857166, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.237229, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.237229, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -1.1102230246251565e-16, b = -0.8930170404711618, c = 0.17177398346406267
+
+  t_opt = -0.190031414
+    <Z>_opt = cos(t_opt) = 0.981998302
+    <X>_opt = sin(t_opt) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.190031, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9333
+  <X> = -0.14690000000000003
+  Energy = -1.0931096092204027
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9802274900873337
+  <X> = -0.16806633357012746
+  Energy = -1.138652482967603
+  measure Z: {'0': 19802.274900873337, '1': 197.72509912666203})
+  measure X: {'0': 8319.336664298726, '1': 11680.663335701272})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+  t = -0.205966, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.205966, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.841231, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.841231, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.253164, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.253164, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.8187492286324076, c = 0.1710606880831236
+
+  t_opt = -0.205966480
+    <Z>_opt = cos(t_opt) = 0.978863784
+    <X>_opt = sin(t_opt) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.205966, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9302999999999999
+  <X> = -0.17419999999999997
+  Energy = -1.105264515561619
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9770383756750399
+  <X> = -0.197087275434787
+  Energy = -1.1474466376773123
+  measure Z: {'0': 19770.383756750398, '1': 229.6162432496021})
+  measure X: {'0': 8029.12724565213, '1': 11970.872754347869})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+  t = -0.222974, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.222974, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.824224, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.824224, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.270171, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.270171, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 1.1102230246251565e-16, b = -0.751762454562315, c = 0.17045757337561962
+
+  t_opt = -0.222973719
+    <Z>_opt = cos(t_opt) = 0.975244182
+    <X>_opt = sin(t_opt) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.222974, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9282999999999999
+  <X> = -0.193
+  Energy = -1.112157560123579
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9749122994587723
+  <X> = -0.21707239400299083
+  Energy = -1.151302258644591
+  measure Z: {'0': 19749.122994587724, '1': 250.87700541227738})
+  measure X: {'0': 7829.276059970093, '1': 12170.723940029908})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+  t = -0.241103, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.241103, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.806095, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.806095, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.288300, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.288300, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.6912180276548994, c = 0.16996057197909598
+
+  t_opt = -0.241102571
+    <Z>_opt = cos(t_opt) = 0.971075301
+    <X>_opt = sin(t_opt) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.241103, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9272
+  <X> = -0.19569999999999999
+  Energy = -1.1134670212157785
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9737429574906343
+  <X> = -0.21994259612141287
+  Energy = -1.149758637996734
+  measure Z: {'0': 19737.429574906342, '1': 262.5704250936584})
+  measure X: {'0': 7800.5740387858705, '1': 12199.425961214129})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+  t = -0.260381, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.260381, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.786817, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.786817, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.307578, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.307578, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -1.1102230246251565e-16, b = -0.6364888642400289, c = 0.16957922946515444
+
+  t_opt = -0.260380693
+    <Z>_opt = cos(t_opt) = 0.966292039
+    <X>_opt = sin(t_opt) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.260381, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9297
+  <X> = -0.20649999999999996
+  Energy = -1.1157802560341872
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9764005528817238
+  <X> = -0.2314234091515474
+  Energy = -1.1497311304168214
+  measure Z: {'0': 19764.005528817237, '1': 235.99447118276277})
+  measure X: {'0': 7685.765908484526, '1': 12314.234091515475})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+  t = -0.402010, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.402010, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.645187, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.645187, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.449208, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.449208, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.3992950916910412, c = 0.16976633007745257
+
+  t_opt = -0.402010464
+    <Z>_opt = cos(t_opt) = 0.920276221
+    <X>_opt = sin(t_opt) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.402010, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8747
+  <X> = -0.33840000000000003
+  Energy = -1.0796650518776905
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9179334537985593
+  <X> = -0.371638141794455
+  Energy = -1.1025706751273452
+  measure Z: {'0': 19179.33453798559, '1': 820.6654620144085})
+  measure X: {'0': 6283.61858205545, '1': 13716.38141794455})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+  t = -0.430107, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.430107, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.617091, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.617091, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.477304, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.477304, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -1.1102230246251565e-16, b = -0.37103737361427735, c = 0.17021348058116212
+
+  t_opt = -0.430106748
+    <Z>_opt = cos(t_opt) = 0.908921244
+    <X>_opt = sin(t_opt) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.430107, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8669
+  <X> = -0.37200000000000005
+  Energy = -1.0758939859163899
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9096417568867389
+  <X> = -0.4073562234729457
+  Energy = -1.0977708809928408
+  measure Z: {'0': 19096.41756886739, '1': 903.5824311326094})
+  measure X: {'0': 5926.437765270544, '1': 14073.562234729457})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.205
+c_z = -0.368346193
+c_x = 0.170264664
+c_0 = -0.692581573
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.432986679
+    <Z>_A = cos(t_A) = 0.907716638
+    <X>_A = sin(t_A) = -0.419583728
+
+  t = -0.432987, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.432987, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.614211, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.614211, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.480184, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.480184, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.36834619275127084, c = 0.17026466429896808
+
+  t_opt = -0.432986679
+    <Z>_opt = cos(t_opt) = 0.907716638
+    <X>_opt = sin(t_opt) = -0.419583728
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.432987, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.432987, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8541000000000001
+  <X> = -0.37200000000000005
+  Energy = -1.070524511415801
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.8960348676808235
+  <X> = -0.40735622411451067
+  Energy = -1.091990975899297
+  measure Z: {'0': 18960.348676808237, '1': 1039.6513231917654})
+  measure X: {'0': 5926.437758854893, '1': 14073.562241145106})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.205
+
+   ==> (oq_map.json) Exact results for r = 1.205 <== 
+evals = [-1.09837582 -0.28678732]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0983758234252137
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.21
+c_z = -0.365678445
+c_x = 0.170317019
+c_0 = -0.694217219
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.435879289
+    <Z>_A = cos(t_A) = 0.906499150
+    <X>_A = sin(t_A) = -0.422207639
+
+  t = -0.435879, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.435879, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.611318, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.611318, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.483077, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.483077, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.36567844464062865, c = 0.1703170189197447
+
+  t_opt = -0.435879289
+    <Z>_opt = cos(t_opt) = 0.906499150
+    <X>_opt = sin(t_opt) = -0.422207639
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.435879, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.435879, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8751
+  <X> = -0.36260000000000003
+  Energy = -1.075979377341096
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9183586694109551
+  <X> = -0.39736366528543293
+  Energy = -1.097718984126656
+  measure Z: {'0': 19183.58669410955, '1': 816.4133058904484})
+  measure X: {'0': 6026.363347145671, '1': 13973.63665285433})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.21
+
+   ==> (oq_map.json) Exact results for r = 1.21 <== 
+evals = [-1.09761357 -0.29082087]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0976135651803745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.215
+c_z = -0.363033880
+c_x = 0.170370543
+c_0 = -0.695829537
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.438784548
+    <Z>_A = cos(t_A) = 0.905268704
+    <X>_A = sin(t_A) = -0.424839469
+
+  t = -0.438785, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.438785, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.608413, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.608413, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.485982, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.485982, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.3630338797117117, c = 0.1703705429848074
+
+  t_opt = -0.438784548
+    <Z>_opt = cos(t_opt) = 0.905268704
+    <X>_opt = sin(t_opt) = -0.424839469
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.438785, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.438785, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8600000000000001
+  <X> = -0.3386
+  Energy = -1.0657261392462454
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9023067928102295
+  <X> = -0.3718507495472556
+  Energy = -1.0867498866333203
+  measure Z: {'0': 19023.067928102297, '1': 976.932071897704})
+  measure X: {'0': 6281.492504527445, '1': 13718.507495472555})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.215
+
+   ==> (oq_map.json) Exact results for r = 1.215 <== 
+evals = [-1.09685288 -0.2948062 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0968528774762885
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.22
+c_z = -0.360412251
+c_x = 0.170425235
+c_0 = -0.697418846
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.441702423
+    <Z>_A = cos(t_A) = 0.904025223
+    <X>_A = sin(t_A) = -0.427479117
+
+  t = -0.441702, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.441702, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.605495, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.605495, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.488900, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.488900, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -5.551115123125783e-17, b = -0.3604122514522546, c = 0.17042523500403356
+
+  t_opt = -0.441702423
+    <Z>_opt = cos(t_opt) = 0.904025223
+    <X>_opt = sin(t_opt) = -0.427479117
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.441702, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.441702, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8606
+  <X> = -0.367
+  Energy = -1.0701356910985367
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.9029446157279213
+  <X> = -0.4020410332715191
+  Energy = -1.09136908572
+  measure Z: {'0': 19029.44615727921, '1': 970.5538427207885})
+  measure X: {'0': 5979.5896672848085, '1': 14020.41033271519})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.22
+
+   ==> (oq_map.json) Exact results for r = 1.22 <== 
+evals = [-1.09609384 -0.29874385]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.096093841358615
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+  t = -0.490071, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.490071, run on ibmq_armonk , measure X 20000 shots.
+  t = 0.557127, run on ibmq_armonk , measure Z 20000 shots.
+  t = 0.557127, run on ibmq_armonk , measure X 20000 shots.
+  t = -1.537268, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.537268, run on ibmq_armonk , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.32139539191852423, c = 0.17145774377906559
+
+  t_opt = -0.490070852
+    <Z>_opt = cos(t_opt) = 0.882299511
+    <X>_opt = sin(t_opt) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.490071, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8527
+  <X> = -0.39189999999999997
+  Energy = -1.0612102439936872
+
+Calibrate 2 raw counts for final energy
+
+Estimate expectations from counts:
+  <Z> = 0.8945466150243753
+  <X> = -0.4285106840516184
+  Energy = -1.0809367385156086
+  measure Z: {'0': 18945.466150243752, '1': 1054.5338497562473})
+  measure X: {'0': 5714.893159483816, '1': 14285.106840516184})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+
+
+
+### restart
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibmq_armonk
+Calibration matrix =
+[[0.9665 0.0535]
+ [0.0335 0.9465]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.588612, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8009
+  <X> = -0.4616
+  Energy = -1.03964812321911
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8553121576743803
+  <X> = -0.5274917855246128
+  Energy = -1.065320800746953
+  measure Z: {'0': 18553.121576743804, '1': 1446.8784232561954})
+  measure X: {'0': 4725.082144753872, '1': 15274.917855246129})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+
+
+
+### restart
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibmq_armonk
+Calibration matrix =
+[[0.9616  0.04315]
+ [0.0384  0.95685]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Skip 3-point Fourier quadrature...
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.695069, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6861999999999999
+  <X> = -0.53
+  Energy = -1.009935333618757
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.7419565567034545
+  <X> = -0.5822309325432087
+  Energy = -1.0311110480839767
+  measure Z: {'0': 17419.565567034544, '1': 2580.434432965454})
+  measure X: {'0': 4177.6906745679125, '1': 15822.309325432085})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Skip 3-point Fourier quadrature...
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibmq_armonk , measure Z 20000 shots.
+  t = -0.914595, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.5673999999999999
+  <X> = -0.6793
+  Energy = -0.9959015394695874
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6126081985569981
+  <X> = -0.7447874136020058
+  Energy = -1.014684493057199
+  measure Z: {'0': 16126.081985569981, '1': 3873.918014430017})
+  measure X: {'0': 2552.1258639799416, '1': 17447.87413602006})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Skip 3-point Fourier quadrature...
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.263943, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.29610000000000003
+  <X> = -0.8204
+  Energy = -0.976200877475979
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.3172192282412241
+  <X> = -0.8984158096926343
+  Energy = -0.9939173705508394
+  measure Z: {'0': 13172.192282412241, '1': 6827.807717587759})
+  measure X: {'0': 1015.8419030736584, '1': 18984.15809692634})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Skip 3-point Fourier quadrature...
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.410252, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.1714
+  <X> = -0.8311999999999999
+  Energy = -0.96668331685157
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.18144700309933665
+  <X> = -0.9101747675594467
+  Energy = -0.9846941369389777
+  measure Z: {'0': 11814.470030993365, '1': 8185.529969006633})
+  measure X: {'0': 898.2523244055349, '1': 19101.747675594466})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Skip 3-point Fourier quadrature...
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibmq_armonk , measure Z 20000 shots.
+  t = -1.569411, run on ibmq_armonk , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.028699999999999948
+  <X> = -0.8413999999999999
+  Energy = -0.9574305582009033
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.026076553072422015
+  <X> = -0.9212804180980771
+  Energy = -0.9788698773296511
+  measure Z: {'0': 10260.76553072422, '1': 9739.23446927578})
+  measure X: {'0': 787.1958190192278, '1': 19212.80418098077})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/armonk_0/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+

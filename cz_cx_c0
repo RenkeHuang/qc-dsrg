@@ -1,0 +1,94 @@
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.205
+c_z = -0.368346193
+c_x = 0.170264664
+c_0 = -0.692581573
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.21
+c_z = -0.365678445
+c_x = 0.170317019
+c_0 = -0.694217219
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.215
+c_z = -0.363033880
+c_x = 0.170370543
+c_0 = -0.695829537
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.22
+c_z = -0.360412251
+c_x = 0.170425235
+c_0 = -0.697418846
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+--
+#Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011

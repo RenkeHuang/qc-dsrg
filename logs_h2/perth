@@ -1,0 +1,5180 @@
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95734 0.09512]
+ [0.04266 0.90488]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9412799999999999
+  <X> = -0.09265999999999996
+  Energy = -1.074931602679687
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.16830971702696118
+  Energy = -1.145259317369479
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41584.51414865194, '1': 58415.48585134806})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93842
+  <X> = -0.10163999999999995
+  Energy = -1.0899073659760314
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17872468728209978
+  Energy = -1.1581404991267736
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41063.76563589501, '1': 58936.23436410499})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9382999999999999
+  <X> = -0.11651999999999996
+  Energy = -1.1019477289020436
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1959824649574482
+  Energy = -1.1660574602410656
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40200.87675212759, '1': 59799.12324787241})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9330400000000001
+  <X> = -0.13454000000000005
+  Energy = -1.1057559644186656
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.21688200396499208
+  Energy = -1.1701297965589164
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39155.89980175039, '1': 60844.1001982496})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92892
+  <X> = -0.14705999999999997
+  Energy = -1.1063890340022815
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.2314026582559196
+  Energy = -1.1698557378474053
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38429.86708720402, '1': 61570.13291279598})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9229799999999999
+  <X> = -0.1634
+  Energy = -1.104194186076546
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.2503537396859993
+  Energy = -1.1679621065753785
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37482.313015700034, '1': 62517.68698429997})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8846799999999999
+  <X> = -0.28200000000000003
+  Energy = -1.0740751958763985
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9652060957630535
+  <X> = -0.3879056390514324
+  Energy = -1.1242080823438978
+  measure Z: {'0': 98260.30478815267, '1': 1739.695211847318})
+  measure X: {'0': 30604.718047428374, '1': 69395.28195257162})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8708400000000001
+  <X> = -0.29844000000000004
+  Energy = -1.06483496953688
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9491545083723183
+  <X> = -0.40697270148029113
+  Energy = -1.1123663079150747
+  measure Z: {'0': 97457.72541861591, '1': 2542.274581384088})
+  measure X: {'0': 29651.36492598544, '1': 70348.63507401456})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.84686
+  <X> = -0.34678000000000003
+  Energy = -1.0515971215055715
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9213425812926417
+  <X> = -0.4630372776132458
+  Energy = -1.095468690428687
+  measure Z: {'0': 96067.12906463208, '1': 3932.870935367916})
+  measure X: {'0': 26848.136119337712, '1': 73151.86388066229})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8009599999999999
+  <X> = -0.42684000000000005
+  Energy = -1.0336097241334288
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8681078997558973
+  <X> = -0.5558906079931812
+  Energy = -1.0736054379865025
+  measure Z: {'0': 93405.39498779486, '1': 6594.605012205135})
+  measure X: {'0': 22205.469600340937, '1': 77794.53039965907})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7503599999999999
+  <X> = -0.49479999999999996
+  Energy = -1.017357037834669
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8094221892952677
+  <X> = -0.6347103987113453
+  Energy = -1.054827620445703
+  measure Z: {'0': 90471.10946476339, '1': 9528.890535236611})
+  measure X: {'0': 18264.48006443274, '1': 81735.51993556727})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6004799999999999
+  <X> = -0.62548
+  Energy = -0.9905929930703559
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6355918505364171
+  <X> = -0.7862726450412452
+  Energy = -1.0257677184124598
+  measure Z: {'0': 81779.59252682085, '1': 18220.407473179148})
+  measure X: {'0': 10686.367747937735, '1': 89313.63225206226})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.33104
+  <X> = -0.7516799999999999
+  Energy = -0.9641436969477314
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.32309619356697655
+  <X> = -0.9326389959587293
+  Energy = -1.0014645755286562
+  measure Z: {'0': 66154.80967834883, '1': 33845.19032165117})
+  measure X: {'0': 3368.0502020635254, '1': 96631.94979793648})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20098
+  <X> = -0.78278
+  Energy = -0.9569340309533904
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.1722530170684053
+  <X> = -0.9687086822214133
+  Energy = -0.9974411067784057
+  measure Z: {'0': 58612.650853420266, '1': 41387.349146579734})
+  measure X: {'0': 1564.5658889293434, '1': 98435.43411107066})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06224000000000002
+  <X> = -0.79206
+  Energy = -0.9441999344075243
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.011342817574512887
+  <X> = -0.9794716049831764
+  Energy = -0.9944831969658884
+  measure Z: {'0': 50567.140878725644, '1': 49432.85912127436})
+  measure X: {'0': 1026.4197508411787, '1': 98973.58024915881})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_0/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95045 0.09499]
+ [0.04955 0.90501]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9424600000000001
+  <X> = -0.09535999999999994
+  Energy = -1.076548481919997
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.16458981136201245
+  Energy = -1.1446173057991258
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41770.50943189937, '1': 58229.49056810062})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9400599999999999
+  <X> = -0.11135999999999996
+  Energy = -1.093041557041675
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1832931995743104
+  Energy = -1.158925250681711
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40835.34002128448, '1': 59164.65997871552})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9365399999999999
+  <X> = -0.1256
+  Energy = -1.1020599613074453
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19993921479840715
+  Energy = -1.1667343045914327
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40003.03926007964, '1': 59996.96073992036})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9341200000000001
+  <X> = -0.12891999999999998
+  Energy = -1.1056098963072218
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9999999999999769
+  <X> = -0.20382016692616944
+  Energy = -1.1679033075134335
+  measure Z: {'0': 99999.99999999885, '1': 1.149144840864111e-09})
+  measure X: {'0': 39808.991653691526, '1': 60191.008346308474})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9279999999999999
+  <X> = -0.15710000000000002
+  Energy = -1.107459517559509
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.23676150672027285
+  Energy = -1.170766530797556
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38161.924663986356, '1': 61838.075336013644})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9229400000000001
+  <X> = -0.17395999999999995
+  Energy = -1.1059594831851285
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.25647021163101674
+  Energy = -1.1689993331748598
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37176.489418449164, '1': 62823.510581550836})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8789800000000001
+  <X> = -0.28678000000000003
+  Energy = -1.0726106969115299
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9743763624987751
+  <X> = -0.38835246539148477
+  Energy = -1.1279455809089016
+  measure Z: {'0': 98718.81812493876, '1': 1281.1818750612385})
+  measure X: {'0': 30582.376730425764, '1': 69417.62326957424})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8709199999999999
+  <X> = -0.30978
+  Energy = -1.0667948733965593
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9649545273857127
+  <X> = -0.41523858508873235
+  Energy = -1.119635670291932
+  measure Z: {'0': 98247.72636928564, '1': 1752.2736307143646})
+  measure X: {'0': 29238.070745563382, '1': 70761.92925443662})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8474200000000001
+  <X> = -0.34987999999999997
+  Energy = -1.0523086219307611
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9374839270413184
+  <X> = -0.4621139507665942
+  Energy = -1.1004981330337777
+  measure Z: {'0': 96874.19635206592, '1': 3125.803647934081})
+  measure X: {'0': 26894.302461670286, '1': 73105.69753832971})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8037799999999999
+  <X> = -0.42374
+  Energy = -1.0338055620563529
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8864704358418765
+  <X> = -0.5484534636436716
+  Energy = -1.0771010364220763
+  measure Z: {'0': 94323.52179209382, '1': 5676.478207906185})
+  measure X: {'0': 22577.326817816418, '1': 77422.67318218357})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.74658
+  <X> = -0.50316
+  Energy = -1.0180375143174762
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8196058276630013
+  <X> = -0.6412924037306454
+  Energy = -1.0581693527304166
+  measure Z: {'0': 90980.29138315006, '1': 9019.708616849934})
+  measure X: {'0': 17935.379813467727, '1': 82064.62018653228})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.60466
+  <X> = -0.6324000000000001
+  Energy = -0.9924916660682701
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6537067782524223
+  <X> = -0.7923690206267076
+  Energy = -1.0295216231216058
+  measure Z: {'0': 82685.33891262111, '1': 17314.661087378885})
+  measure X: {'0': 10381.548968664623, '1': 89618.45103133538})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32787999999999995
+  <X> = -0.76926
+  Energy = -0.9676111129185486
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.33016155052061397
+  <X> = -0.9523531199717644
+  Energy = -1.006055986253131
+  measure Z: {'0': 66508.0775260307, '1': 33491.9224739693})
+  measure X: {'0': 2382.344001411773, '1': 97617.65599858822})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20026000000000005
+  <X> = -0.79704
+  Energy = -0.9600944371745184
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.1809786547561355
+  <X> = -0.98482687678955
+  Energy = -1.00135853310855
+  measure Z: {'0': 59048.932737806776, '1': 40951.06726219323})
+  measure X: {'0': 758.6561605225005, '1': 99241.3438394775})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.05736000000000002
+  <X> = -0.8029200000000001
+  Energy = -0.9471129966454175
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.013934021720341694
+  <X> = -0.9917003717298044
+  Energy = -0.9977664214144817
+  measure Z: {'0': 50696.701086017085, '1': 49303.298913982915})
+  measure X: {'0': 414.9814135097743, '1': 99585.01858649023})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_1/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95012 0.08929]
+ [0.04988 0.91071]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9413199999999999
+  <X> = -0.09681999999999996
+  Energy = -1.0756885825731317
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.15825424299812513
+  Energy = -1.1435238618893226
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 42087.287850093744, '1': 57912.712149906256})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9391
+  <X> = -0.11190000000000005
+  Energy = -1.0922770186338933
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17577221938771592
+  Energy = -1.1576333419555054
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41211.389030614206, '1': 58788.61096938579})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93638
+  <X> = -0.12735999999999997
+  Energy = -1.1022300282418906
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1937316311000833
+  Energy = -1.1656724310526638
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40313.418444995834, '1': 59686.581555004166})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9341200000000001
+  <X> = -0.13339999999999996
+  Energy = -1.1063735462359445
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.20074811599234382
+  Energy = -1.1673796531659848
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39962.59420038281, '1': 60037.4057996172})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92856
+  <X> = -0.15173999999999999
+  Energy = -1.106935610989188
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22205313579010827
+  Energy = -1.1682666876613845
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38897.34321049458, '1': 61102.65678950541})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92204
+  <X> = -0.17040000000000005
+  Energy = -1.1047829411504164
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24372988859666678
+  Energy = -1.1668388390115576
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37813.505570166664, '1': 62186.49442983334})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8810199999999999
+  <X> = -0.28224000000000005
+  Energy = -1.072654519760028
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9776727112343984
+  <X> = -0.37365101836775716
+  Energy = -1.1267659860714916
+  measure Z: {'0': 98883.63556171992, '1': 1116.3644382800812})
+  measure X: {'0': 31317.449081612147, '1': 68682.55091838786})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8712
+  <X> = -0.30757999999999996
+  Energy = -1.0665242942038928
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9662651185610092
+  <X> = -0.4030877189032518
+  Energy = -1.1180537073739893
+  measure Z: {'0': 98313.25592805045, '1': 1686.7440719495387})
+  measure X: {'0': 29845.61405483741, '1': 70154.38594516259})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8490800000000001
+  <X> = -0.35231999999999997
+  Energy = -1.0532604951761666
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9405689863861036
+  <X> = -0.45506081904160667
+  Energy = -1.1002803428388441
+  measure Z: {'0': 97028.44931930519, '1': 2971.5506806948088})
+  measure X: {'0': 27246.95904791967, '1': 72753.04095208034})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.80688
+  <X> = -0.42612000000000005
+  Energy = -1.0350288903138547
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8915465298396686
+  <X> = -0.5407920265919541
+  Energy = -1.0770910510486023
+  measure Z: {'0': 94577.32649198343, '1': 5422.673508016566})
+  measure X: {'0': 22960.398670402305, '1': 77039.6013295977})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7462
+  <X> = -0.5037799999999999
+  Energy = -1.0180667291988963
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.821056421094852
+  <X> = -0.6310072836559153
+  Energy = -1.056649888828273
+  measure Z: {'0': 91052.8210547426, '1': 8947.178945257408})
+  measure X: {'0': 18449.63581720424, '1': 81550.36418279576})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6057600000000001
+  <X> = -0.6290199999999999
+  Energy = -0.9920173215246288
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6579115576290675
+  <X> = -0.7764947775922459
+  Energy = -1.0271552169010452
+  measure Z: {'0': 82895.57788145337, '1': 17104.422118546623})
+  measure X: {'0': 11175.261120387699, '1': 88824.7388796123})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32702000000000003
+  <X> = -0.7694399999999999
+  Energy = -0.9675917665216792
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.3341077796987668
+  <X> = -0.9396164247845363
+  Energy = -1.0036536450501126
+  measure Z: {'0': 66705.38898493834, '1': 33294.611015061666})
+  measure X: {'0': 3019.178760773189, '1': 96980.8212392268})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20374000000000003
+  <X> = -0.7879799999999999
+  Energy = -0.9581958668501316
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.19089715763163762
+  <X> = -0.9611537738830611
+  Energy = -0.9964275829796168
+  measure Z: {'0': 59544.85788158188, '1': 40455.14211841812})
+  measure X: {'0': 1942.311305846953, '1': 98057.68869415305})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06025999999999998
+  <X> = -0.80768
+  Energy = -0.9483916824221013
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.024220812216965926
+  <X> = -0.9840386603630316
+  Energy = -0.9957138062562153
+  measure Z: {'0': 51211.0406108483, '1': 48788.95938915171})
+  measure X: {'0': 798.0669818484212, '1': 99201.93301815157})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_2/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95813 0.08945]
+ [0.04187 0.91055]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9415199999999999
+  <X> = -0.09724
+  Energy = -1.0759561359078742
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1667127137798854
+  Energy = -1.1449836935620863
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41664.36431100573, '1': 58335.63568899427})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9381999999999999
+  <X> = -0.10763999999999996
+  Energy = -1.0907415461279122
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17868490122908331
+  Energy = -1.1581336649179605
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41065.75493854583, '1': 58934.245061454174})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93682
+  <X> = -0.12334
+  Energy = -1.1019026139363948
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19675829995023314
+  Energy = -1.1661901751087702
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40162.08500248835, '1': 59837.91499751165})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9327000000000001
+  <X> = -0.1411
+  Energy = -1.1066185668654587
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.21720311198205394
+  Energy = -1.1701845318522963
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39139.8444008973, '1': 60860.15559910269})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92842
+  <X> = -0.14832
+  Energy = -1.1062575753091477
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22551456560392197
+  Energy = -1.1688549942524058
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38724.271719803895, '1': 61275.7282801961})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92546
+  <X> = -0.17951999999999996
+  Energy = -1.1085062956388394
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.2614311368765556
+  Energy = -1.1698406030554325
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 36928.44315617222, '1': 63071.55684382778})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8814200000000001
+  <X> = -0.28659999999999997
+  Energy = -1.0735544189958421
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9598931712474411
+  <X> = -0.38469862048719444
+  Energy = -1.1215422138901476
+  measure Z: {'0': 97994.65856237206, '1': 2005.3414376279484})
+  measure X: {'0': 30765.068975640275, '1': 69234.93102435973})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.86904
+  <X> = -0.30739999999999995
+  Energy = -1.0656922150503814
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9456416634320887
+  <X> = -0.4086430001309578
+  Energy = -1.1113472185014777
+  measure Z: {'0': 97282.08317160443, '1': 2717.916828395569})
+  measure X: {'0': 29567.849993452113, '1': 70432.15000654789})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8461399999999999
+  <X> = -0.34972000000000003
+  Energy = -1.0518698025901005
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9192798268864947
+  <X> = -0.4573605871182828
+  Energy = -1.0938324181234933
+  measure Z: {'0': 95963.99134432474, '1': 4036.0086556752667})
+  measure X: {'0': 27131.97064408586, '1': 72868.02935591414})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.79962
+  <X> = -0.42118000000000005
+  Energy = -1.0322743227834716
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8657273103253079
+  <X> = -0.5396233365573101
+  Energy = -1.070151100814225
+  measure Z: {'0': 93286.36551626539, '1': 6713.634483734609})
+  measure X: {'0': 23018.83317213449, '1': 76981.1668278655})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.74736
+  <X> = -0.50492
+  Energy = -1.018516770122699
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8055670766646834
+  <X> = -0.6360224708611879
+  Energy = -1.0542389099727034
+  measure Z: {'0': 90278.35383323416, '1': 9721.646166765835})
+  measure X: {'0': 18198.8764569406, '1': 81801.1235430594})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.5972
+  <X> = -0.6313200000000001
+  Energy = -0.9912136545693169
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6327070958235405
+  <X> = -0.7815305979294234
+  Energy = -1.024463687649022
+  measure Z: {'0': 81635.35479117703, '1': 18364.645208822978})
+  measure X: {'0': 10923.47010352883, '1': 89076.52989647117})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.31544
+  <X> = -0.7643599999999999
+  Energy = -0.9657618721979555
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.3083529089188045
+  <X> = -0.9346825073500848
+  Energy = -1.0009149193876887
+  measure Z: {'0': 65417.64544594022, '1': 34582.35455405977})
+  measure X: {'0': 3265.874632495755, '1': 96734.12536750425})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20090000000000002
+  <X> = -0.7961
+  Energy = -0.9599075489566586
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.17649767470585642
+  <X> = -0.9712207050836917
+  Energy = -0.9981560258852116
+  measure Z: {'0': 58824.883735292824, '1': 41175.116264707176})
+  measure X: {'0': 1438.9647458154143, '1': 98561.0352541846})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06068000000000001
+  <X> = -0.8009
+  Energy = -0.9465720534691875
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.015080354091657144
+  <X> = -0.9767463297158845
+  Energy = -0.9937531097404267
+  measure Z: {'0': 50754.01770458286, '1': 49245.98229541715})
+  measure X: {'0': 1162.6835142057791, '1': 98837.31648579422})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_3/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95354 0.08684]
+ [0.04646 0.91316]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9391400000000001
+  <X> = -0.09806000000000004
+  Energy = -1.0737763689770774
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.15973231827408557
+  Energy = -1.1437789601403243
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 42013.38408629572, '1': 57986.61591370428})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9389400000000001
+  <X> = -0.11021999999999998
+  Energy = -1.0918455556151985
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1737625480743873
+  Energy = -1.1572881327085616
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41311.872596280635, '1': 58688.12740371937})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93588
+  <X> = -0.12485999999999997
+  Energy = -1.1013930019073666
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19065420492341512
+  Energy = -1.1651460044133581
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40467.28975382924, '1': 59532.710246170755})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9321600000000001
+  <X> = -0.13765999999999995
+  Energy = -1.1056262410875828
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.20542286923634673
+  Energy = -1.1681765002600872
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39728.85653818266, '1': 60271.14346181734})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92838
+  <X> = -0.15359999999999996
+  Energy = -1.1071273184080912
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22381447101985852
+  Energy = -1.16856604520448
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38809.27644900708, '1': 61190.72355099293})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9258200000000001
+  <X> = -0.16793999999999998
+  Energy = -1.1067717041527596
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24035998479144166
+  Energy = -1.166267373320896
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37982.00076042792, '1': 62017.999239572084})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8808199999999999
+  <X> = -0.28750000000000003
+  Energy = -1.0734676316378973
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9697011672844714
+  <X> = -0.3783085264815432
+  Energy = -1.1243736757588696
+  measure Z: {'0': 98485.05836422357, '1': 1514.9416357764278})
+  measure X: {'0': 31084.573675922846, '1': 68915.42632407715})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8748
+  <X> = -0.3064
+  Energy = -1.0676591768418184
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9627552812135053
+  <X> = -0.4001153767569748
+  Energy = -1.1162454938405624
+  measure Z: {'0': 98137.76406067527, '1': 1862.2359393247323})
+  measure X: {'0': 29994.231162151264, '1': 70005.76883784874})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8481799999999999
+  <X> = -0.35065999999999997
+  Energy = -1.0526866194687667
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9320410753433844
+  <X> = -0.4511826434111711
+  Energy = -1.0968745682834498
+  measure Z: {'0': 96602.05376716924, '1': 3397.946232830771})
+  measure X: {'0': 27440.86782944145, '1': 72559.13217055856})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.80206
+  <X> = -0.42992
+  Energy = -1.0344331564234968
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8788277372606543
+  <X> = -0.5426329756461438
+  Energy = -1.0740932681668895
+  measure Z: {'0': 93941.38686303272, '1': 6058.613136967278})
+  measure X: {'0': 22868.351217692812, '1': 77131.64878230718})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7476
+  <X> = -0.50322
+  Energy = -1.0182656721662326
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8159916926721772
+  <X> = -0.6272066422006674
+  Energy = -1.0548941817277377
+  measure Z: {'0': 90799.58463360886, '1': 9200.415366391147})
+  measure X: {'0': 18639.667889966637, '1': 81360.33211003337})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6063000000000001
+  <X> = -0.6347799999999999
+  Energy = -0.9931738604148166
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6529595015576255
+  <X> = -0.779000808734057
+  Energy = -1.0269104127575117
+  measure Z: {'0': 82647.97507788127, '1': 17352.024922118722})
+  measure X: {'0': 11049.959563297147, '1': 88950.04043670285})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32562
+  <X> = -0.7706
+  Energy = -0.9677415993725698
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.32911041083844617
+  <X> = -0.9357101656344973
+  Energy = -1.0025054752181934
+  measure Z: {'0': 66455.5205419223, '1': 33544.479458077694})
+  measure X: {'0': 3214.491718275137, '1': 96785.50828172486})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.2051
+  <X> = -0.7941800000000001
+  Energy = -0.9596304969926374
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.19005423667302812
+  <X> = -0.9629168105090248
+  Energy = -0.9967910395040787
+  measure Z: {'0': 59502.7118336514, '1': 40497.28816634859})
+  measure X: {'0': 1854.1594745487685, '1': 98145.84052545123})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06254000000000004
+  <X> = -0.80606
+  Energy = -0.9479577144280318
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.02556824738312119
+  <X> = -0.9766239781714111
+  Energy = -0.9937241704108609
+  measure Z: {'0': 51278.41236915606, '1': 48721.58763084394})
+  measure X: {'0': 1168.8010914294473, '1': 98831.19890857056})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_4/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95877 0.08939]
+ [0.04123 0.91061]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.94048
+  <X> = -0.09652
+  Energy = -1.0748175275926282
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.16641744691615185
+  Energy = -1.1449327340055997
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41679.12765419241, '1': 58320.87234580759})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93666
+  <X> = -0.10573999999999995
+  Energy = -1.089039929317005
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17702270850709312
+  Energy = -1.1578481434528194
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41148.86457464535, '1': 58851.13542535466})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93398
+  <X> = -0.11939999999999995
+  Energy = -1.0989033870160312
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19273504766010663
+  Energy = -1.1655019548036893
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40363.24761699467, '1': 59636.75238300533})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9312800000000001
+  <X> = -0.13295999999999997
+  Energy = -1.1041635395327025
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.20833237541611166
+  Energy = -1.1686724476232113
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39583.38122919442, '1': 60416.61877080559})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9277200000000001
+  <X> = -0.14474000000000004
+  Energy = -1.1051652638421041
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9999999999999997
+  <X> = -0.2218822634174133
+  Energy = -1.1682376460951858
+  measure Z: {'0': 99999.99999999999, '1': 1.435246195450687e-11})
+  measure X: {'0': 38905.88682912934, '1': 61094.11317087067})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92418
+  <X> = -0.16887999999999997
+  Energy = -1.105887266891103
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24964918018996635
+  Energy = -1.167842627918929
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37517.540990501686, '1': 62482.459009498314})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8810199999999999
+  <X> = -0.28566
+  Energy = -1.0732351206088928
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9579930580602356
+  <X> = -0.3839747864927077
+  Energy = -1.1206606253800098
+  measure Z: {'0': 97899.65290301178, '1': 2100.3470969882246})
+  measure X: {'0': 30801.260675364614, '1': 69198.73932463539})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8682799999999999
+  <X> = -0.30313999999999997
+  Energy = -1.0646851172191587
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9433389311933124
+  <X> = -0.40408106947604006
+  Energy = -1.1097163166845219
+  measure Z: {'0': 97166.94655966561, '1': 2833.0534403343895})
+  measure X: {'0': 29795.946526198, '1': 70204.053473802})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8465800000000001
+  <X> = -0.35179999999999995
+  Energy = -1.0523678486696053
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9183786149932028
+  <X> = -0.4600519908900425
+  Energy = -1.0940042347921515
+  measure Z: {'0': 95918.93074966014, '1': 4081.069250339854})
+  measure X: {'0': 26997.400455497875, '1': 73002.59954450213})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8062
+  <X> = -0.4292
+  Energy = -1.0353879089985427
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8719317293086307
+  <X> = -0.5490809547572293
+  Energy = -1.0734170814962274
+  measure Z: {'0': 93596.58646543154, '1': 6403.413534568467})
+  measure X: {'0': 22545.952262138533, '1': 77454.04773786146})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7464999999999999
+  <X> = -0.5049999999999999
+  Energy = -1.0183476212457916
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8032620944202072
+  <X> = -0.6362695191564776
+  Energy = -1.0537913572197235
+  measure Z: {'0': 90163.10472101037, '1': 9836.89527898963})
+  measure X: {'0': 18186.524042176126, '1': 81813.47595782389})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6025400000000001
+  <X> = -0.6312800000000001
+  Energy = -0.991976212645621
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6376728226220298
+  <X> = -0.7815224642971867
+  Energy = -1.0251782416487936
+  measure Z: {'0': 81883.6411311015, '1': 18116.35886889851})
+  measure X: {'0': 10923.87678514066, '1': 89076.12321485934})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32376000000000005
+  <X> = -0.76552
+  Energy = -0.9665558601586899
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.31700752260230597
+  <X> = -0.9359313533830226
+  Energy = -1.0017496645906598
+  measure Z: {'0': 65850.3761301153, '1': 34149.623869884694})
+  measure X: {'0': 3203.432330848875, '1': 96796.56766915113})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20659999999999995
+  <X> = -0.7847
+  Energy = -0.9575664278517035
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.18224482144686388
+  <X> = -0.9579930490374589
+  Energy = -0.9954082130033988
+  measure Z: {'0': 59112.24107234319, '1': 40887.7589276568})
+  measure X: {'0': 2100.3475481270616, '1': 97899.65245187293})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06495999999999996
+  <X> = -0.8031600000000001
+  Energy = -0.9471802402412418
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.019324125433061723
+  <X> = -0.9792265752537792
+  Energy = -0.9944203980183601
+  measure Z: {'0': 50966.206271653085, '1': 49033.793728346915})
+  measure X: {'0': 1038.6712373110422, '1': 98961.32876268897})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_5/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95314 0.09135]
+ [0.04686 0.90865]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9392199999999999
+  <X> = -0.09732000000000002
+  Energy = -1.073726680287015
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.16455284885325
+  Energy = -1.14461092650878
+  measure Z: {'0': 100000.0, '1': 1.0445344337194594e-14})
+  measure X: {'0': 41772.3575573375, '1': 58227.6424426625})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9376199999999999
+  <X> = -0.10660000000000003
+  Energy = -1.0900449513016364
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17532113391842996
+  Energy = -1.1575558572075635
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41233.9433040785, '1': 58766.0566959215})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9362600000000001
+  <X> = -0.12176000000000003
+  Energy = -1.101173838481189
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19291242646121992
+  Energy = -1.165532297343459
+  measure Z: {'0': 100000.0, '1': 1.5637922272208893e-17})
+  measure X: {'0': 40354.378676939006, '1': 59645.621323060994})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9336
+  <X> = -0.13514000000000004
+  Energy = -1.1062792259372458
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9999999999999986
+  <X> = -0.20843825061641597
+  Energy = -1.1686904948529349
+  measure Z: {'0': 99999.99999999993, '1': 7.395528144774028e-11})
+  measure X: {'0': 39578.087469179205, '1': 60421.912530820795})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9301200000000001
+  <X> = -0.15134000000000003
+  Energy = -1.1079459268835379
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22723633366827994
+  Energy = -1.1691476269374395
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38638.183316586, '1': 61361.816683414})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9251799999999999
+  <X> = -0.17172000000000004
+  Energy = -1.1070053607670243
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.2508847875079354
+  Energy = -1.1680521612558317
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37455.76062460323, '1': 62544.23937539677})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8829
+  <X> = -0.27753999999999995
+  Energy = -1.072607292781043
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9728704208826441
+  <X> = -0.3736757214964874
+  Energy = -1.1248526488646668
+  measure Z: {'0': 98643.52104413221, '1': 1356.478955867794})
+  measure X: {'0': 31316.213925175627, '1': 68683.78607482437})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8748800000000001
+  <X> = -0.30401999999999996
+  Energy = -1.0672837517479246
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9635642092268353
+  <X> = -0.40440246475606895
+  Energy = -1.1172753565359548
+  measure Z: {'0': 98178.21046134175, '1': 1821.789538658242})
+  measure X: {'0': 29779.876762196553, '1': 70220.12323780345})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8436999999999999
+  <X> = -0.34704
+  Energy = -1.0506260910804914
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9273837008009005
+  <X> = -0.45432181491280405
+  Energy = -1.0959159448300622
+  measure Z: {'0': 96369.18504004502, '1': 3630.8149599549834})
+  measure X: {'0': 27283.909254359794, '1': 72716.0907456402})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7988599999999999
+  <X> = -0.43208
+  Energy = -1.0339744568116198
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8753524640643815
+  <X> = -0.5530001508004583
+  Energy = -1.0749921690788207
+  measure Z: {'0': 93767.62320321907, '1': 6232.376796780918})
+  measure X: {'0': 22349.99245997709, '1': 77650.00754002291})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.73984
+  <X> = -0.4998
+  Energy = -1.0160029466996001
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8068671126336029
+  <X> = -0.6315807794064294
+  Energy = -1.0537263461142259
+  measure Z: {'0': 90343.35563168014, '1': 9656.64436831986})
+  measure X: {'0': 18420.96102967853, '1': 81579.03897032146})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.60318
+  <X> = -0.6283399999999999
+  Energy = -0.9915179326173437
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6482901899496847
+  <X> = -0.7807354459829645
+  Energy = -1.0265619233935985
+  measure Z: {'0': 82414.50949748424, '1': 17585.490502515768})
+  measure X: {'0': 10963.227700851776, '1': 89036.77229914823})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32411999999999996
+  <X> = -0.7650600000000001
+  Energy = -0.9664835093924267
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.32447579625380235
+  <X> = -0.9393819839062411
+  Energy = -1.0029662899093437
+  measure Z: {'0': 66223.78981269011, '1': 33776.21018730988})
+  measure X: {'0': 3030.9008046879503, '1': 96969.09919531204})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.19971999999999995
+  <X> = -0.7891999999999999
+  Energy = -0.9583230141712998
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.18012508863227678
+  <X> = -0.967393448928166
+  Energy = -0.9974320695965468
+  measure Z: {'0': 59006.25443161384, '1': 40993.74556838616})
+  measure X: {'0': 1630.3275535916946, '1': 98369.67244640831})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06285999999999997
+  <X> = -0.79724
+  Energy = -0.9455905023110316
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.021316097889197583
+  <X> = -0.9767228641578612
+  Energy = -0.9937491305285787
+  measure Z: {'0': 51065.80489445988, '1': 48934.19510554012})
+  measure X: {'0': 1163.8567921069346, '1': 98836.14320789307})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_6/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.94504 0.08912]
+ [0.05496 0.91088]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9424999999999999
+  <X> = -0.09868000000000005
+  Energy = -1.077160487782466
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.15520142069298565
+  Energy = -1.1429969809900027
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 42239.928965350715, '1': 57760.071034649285})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93624
+  <X> = -0.11348000000000003
+  Energy = -1.0899943927920188
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17249275986631418
+  Energy = -1.157070016129905
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41375.36200668429, '1': 58624.63799331571})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93764
+  <X> = -0.12244000000000005
+  Energy = -1.1024200336845986
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.18296102714157086
+  Energy = -1.16383000412845
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40851.94864292145, '1': 59148.05135707854})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9329799999999999
+  <X> = -0.13291999999999998
+  Energy = -1.1054347174025234
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19520515933338078
+  Energy = -1.1664348142245715
+  measure Z: {'0': 100000.0, '1': 4.924986943858926e-12})
+  measure X: {'0': 40239.742033330964, '1': 59760.25796666904})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9332199999999999
+  <X> = -0.15602000000000005
+  Energy = -1.1108841182461302
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.222193662959135
+  Energy = -1.168290571739411
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38890.31685204325, '1': 61109.683147956755})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.92418
+  <X> = -0.16918000000000005
+  Energy = -1.105938140659943
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.23756893717977107
+  Energy = -1.1657940696175082
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38121.55314101145, '1': 61878.44685898855})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.88182
+  <X> = -0.28503999999999996
+  Energy = -1.0734493015575977
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9903495660632806
+  <X> = -0.37293204941038643
+  Energy = -1.1317057352614117
+  measure Z: {'0': 99517.47830316401, '1': 482.52169683597674})
+  measure X: {'0': 31353.39752948068, '1': 68646.60247051933})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8727
+  <X> = -0.29862000000000005
+  Energy = -1.0655557374783071
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9796943640493527
+  <X> = -0.3887980153825997
+  Energy = -1.1206041591768825
+  measure Z: {'0': 98984.71820246763, '1': 1015.2817975323569})
+  measure X: {'0': 30560.09923087001, '1': 69439.90076912999})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8473999999999999
+  <X> = -0.35413999999999995
+  Energy = -1.0530326040114215
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9501355269077807
+  <X> = -0.45366389032477605
+  Energy = -1.103115470633105
+  measure Z: {'0': 97506.77634538902, '1': 2493.2236546109702})
+  measure X: {'0': 27316.8054837612, '1': 72683.1945162388})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8018799999999999
+  <X> = -0.43510000000000004
+  Energy = -1.0352883795850805
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8969529956524623
+  <X> = -0.5482521693549471
+  Energy = -1.0798009457497155
+  measure Z: {'0': 94847.6497826231, '1': 5152.350217376894})
+  measure X: {'0': 22587.391532252645, '1': 77412.60846774736})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.7456
+  <X> = -0.5018800000000001
+  Energy = -1.0176009608976133
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8311991777696823
+  <X> = -0.6262734848879583
+  Energy = -1.0579708747308274
+  measure Z: {'0': 91559.95888848412, '1': 8440.041111515877})
+  measure X: {'0': 18686.325755602087, '1': 81313.67424439792})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.59884
+  <X> = -0.62958
+  Energy = -0.991124301105367
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.659734554610409
+  <X> = -0.7754696735433465
+  Energy = -1.0272261300840888
+  measure Z: {'0': 82986.72773052045, '1': 17013.27226947955})
+  measure X: {'0': 11226.516322832676, '1': 88773.48367716733})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32051999999999997
+  <X> = -0.7666999999999999
+  Energy = -0.9665879371545035
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.33456397599127286
+  <X> = -0.935671556798638
+  Energy = -1.0028588140052557
+  measure Z: {'0': 66728.19879956364, '1': 33271.80120043636})
+  measure X: {'0': 3216.422160068104, '1': 96783.5778399319})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.19917999999999997
+  <X> = -0.79464
+  Energy = -0.9595190658616437
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.1927983918966421
+  <X> = -0.9683147984239933
+  Energy = -0.9980965433189464
+  measure Z: {'0': 59639.91959483211, '1': 40360.08040516789})
+  measure X: {'0': 1584.2600788003435, '1': 98415.73992119965})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.05017999999999995
+  <X> = -0.8044
+  Energy = -0.9475075656563384
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.018716702494926296
+  <X> = -0.9797177308518112
+  Energy = -0.9945520006831323
+  measure Z: {'0': 50935.835124746314, '1': 49064.16487525368})
+  measure X: {'0': 1014.1134574094409, '1': 98985.88654259055})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_7/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.94809 0.09156]
+ [0.05191 0.90844]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9393
+  <X> = -0.09678000000000003
+  Energy = -1.0737115092233753
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.15928222063698977
+  Energy = -1.143701278629869
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 42035.88896815051, '1': 57964.11103184949})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9400599999999999
+  <X> = -0.11034000000000005
+  Energy = -1.0928663475785414
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17511353951038833
+  Energy = -1.1575201978891494
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41244.32302448059, '1': 58755.67697551942})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93564
+  <X> = -0.12230000000000002
+  Energy = -1.100758586731002
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.18907686106801086
+  Energy = -1.164876182888109
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40546.15694659946, '1': 59453.843053400546})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9318
+  <X> = -0.13690000000000002
+  Energy = -1.1052260588481748
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.20612237751362633
+  Energy = -1.1682957367435884
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39693.88112431869, '1': 60306.11887568131})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93062
+  <X> = -0.15280000000000005
+  Energy = -1.1085396783324548
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22468565126286205
+  Energy = -1.1687141114968775
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38765.717436856896, '1': 61234.282563143104})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9248799999999999
+  <X> = -0.16978000000000004
+  Energy = -1.1064854304025897
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24450982934338783
+  Energy = -1.166971100762415
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37774.50853283061, '1': 62225.49146716939})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8810800000000001
+  <X> = -0.28336
+  Energy = -1.0728686157552163
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.982370728403106
+  <X> = -0.37711463696198544
+  Energy = -1.129229887085167
+  measure Z: {'0': 99118.5364201553, '1': 881.4635798447008})
+  measure X: {'0': 31144.268151900724, '1': 68855.73184809927})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.87426
+  <X> = -0.30484
+  Energy = -1.0671932836303601
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9744083686500191
+  <X> = -0.40219256321513
+  Energy = -1.1209227899343626
+  measure Z: {'0': 98720.41843250096, '1': 1279.581567499043})
+  measure X: {'0': 29890.371839243497, '1': 70109.6281607565})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8455600000000001
+  <X> = -0.35606000000000004
+  Energy = -1.0527704353583474
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9409010819105841
+  <X> = -0.46199199461902035
+  Energy = -1.101575480536329
+  measure Z: {'0': 97045.05409552921, '1': 2954.9459044707974})
+  measure X: {'0': 26900.400269048987, '1': 73099.59973095103})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8013399999999999
+  <X> = -0.4269
+  Energy = -1.033719318645752
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8892741643334364
+  <X> = -0.5446977923883707
+  Energy = -1.0771784325454314
+  measure Z: {'0': 94463.70821667183, '1': 5536.291783328167})
+  measure X: {'0': 22765.110380581464, '1': 77234.88961941852})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.74716
+  <X> = -0.5012000000000001
+  Energy = -1.017812683010777
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8260189368570741
+  <X> = -0.6314431485386405
+  Energy = -1.0577855207355948
+  measure Z: {'0': 91300.9468428537, '1': 8699.053157146303})
+  measure X: {'0': 18427.842573067977, '1': 81572.15742693201})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6006400000000001
+  <X> = -0.6323799999999999
+  Energy = -0.9919082210082237
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6549566273052994
+  <X> = -0.7845959969939376
+  Energy = -1.0282462107538934
+  measure Z: {'0': 82747.83136526497, '1': 17252.168634735033})
+  measure X: {'0': 10770.200150303115, '1': 89229.79984969688})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32164
+  <X> = -0.7678
+  Energy = -0.9668922242651171
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.3292237332369143
+  <X> = -0.9426990298320972
+  Energy = -1.0039746964861187
+  measure Z: {'0': 66461.18666184571, '1': 33538.81333815429})
+  measure X: {'0': 2865.04850839514, '1': 97134.95149160485})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.1976
+  <X> = -0.796
+  Energy = -0.9597657902475645
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.18440685086905567
+  <X> = -0.9756225704540085
+  Energy = -0.9994258423286038
+  measure Z: {'0': 59220.34254345278, '1': 40779.657456547226})
+  measure X: {'0': 1218.871477299582, '1': 98781.12852270041})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06590000000000001
+  <X> = -0.8034600000000001
+  Energy = -0.9472611112918734
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.03064691209257908
+  <X> = -0.9843321322847481
+  Energy = -0.9957949654065386
+  measure Z: {'0': 51532.34560462895, '1': 48467.65439537104})
+  measure X: {'0': 783.3933857625905, '1': 99216.6066142374})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_8/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95303 0.0897 ]
+ [0.04697 0.9103 ]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.94068
+  <X> = -0.10054000000000002
+  Energy = -1.0757063982029806
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1659504478868289
+  Energy = -1.1448521355154297
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41702.47760565856, '1': 58297.522394341446})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93886
+  <X> = -0.11193999999999998
+  Energy = -1.0920695655035186
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17915513263290556
+  Energy = -1.158214438439345
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41042.24336835471, '1': 58957.75663164528})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9355
+  <X> = -0.12528
+  Energy = -1.1011537226894812
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1946069283891474
+  Energy = -1.1658221600092085
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40269.65358054263, '1': 59730.34641945737})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93384
+  <X> = -0.13779999999999998
+  Energy = -1.1069130660715198
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.20910891625877043
+  Energy = -1.168804814890878
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 39544.554187061476, '1': 60455.445812938524})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9288799999999999
+  <X> = -0.15941999999999995
+  Energy = -1.1084620979508368
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.23415148767550947
+  Energy = -1.1703229304678318
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38292.42561622453, '1': 61707.57438377548})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9228000000000001
+  <X> = -0.1728
+  Energy = -1.1056736628379553
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24964960987652768
+  Energy = -1.1678427007848449
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37517.519506173616, '1': 62482.480493826384})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8786400000000001
+  <X> = -0.29062000000000004
+  Energy = -1.0731268392878524
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9682392597236409
+  <X> = -0.3861211820991521
+  Energy = -1.1251162691176846
+  measure Z: {'0': 98411.96298618204, '1': 1588.0370138179517})
+  measure X: {'0': 30693.940895042404, '1': 69306.0591049576})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8711599999999999
+  <X> = -0.31166000000000005
+  Energy = -1.0672039237097193
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9595751362960323
+  <X> = -0.4104919324482617
+  Energy = -1.1168317708833286
+  measure Z: {'0': 97978.75681480161, '1': 2021.2431851983831})
+  measure X: {'0': 29475.403377586914, '1': 70524.5966224131})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.84734
+  <X> = -0.35525999999999996
+  Energy = -1.0532053529609389
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9319842933855847
+  <X> = -0.46099405789212267
+  Energy = -1.098538561814054
+  measure Z: {'0': 96599.21466927923, '1': 3400.785330720771})
+  measure X: {'0': 26950.297105393867, '1': 73049.70289460613})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.80236
+  <X> = -0.42972000000000005
+  Energy = -1.0344765949302257
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8798837065667968
+  <X> = -0.547241500970632
+  Energy = -1.075171431608323
+  measure Z: {'0': 93994.18532833984, '1': 6005.814671660159})
+  measure X: {'0': 22637.924951468405, '1': 77362.0750485316})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.74806
+  <X> = -0.5020199999999999
+  Energy = -1.0181503872056816
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8169877105212628
+  <X> = -0.6309869922277764
+  Energy = -1.0557787303475155
+  measure Z: {'0': 90849.38552606315, '1': 9150.61447393686})
+  measure X: {'0': 18450.65038861118, '1': 81549.34961138882})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.5987199999999999
+  <X> = -0.63466
+  Energy = -0.9920583225783354
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6440063476512765
+  <X> = -0.7846246510623947
+  Energy = -1.0266725037253908
+  measure Z: {'0': 82200.31738256382, '1': 17799.68261743617})
+  measure X: {'0': 10768.76744688027, '1': 89231.23255311974})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.32878
+  <X> = -0.7683800000000001
+  Energy = -0.9674867061289549
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.33133333214932725
+  <X> = -0.9395132799738697
+  Energy = -1.0034482067597248
+  measure Z: {'0': 66566.66660746637, '1': 33433.33339253364})
+  measure X: {'0': 3024.3360013065194, '1': 96975.66399869348})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.19663999999999998
+  <X> = -0.7927
+  Energy = -0.9589936522575861
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.17827481960282437
+  <X> = -0.9676832729084012
+  Energy = -0.9974298785095412
+  measure Z: {'0': 58913.740980141214, '1': 41086.259019858786})
+  measure X: {'0': 1615.8363545799546, '1': 98384.16364542005})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.05815999999999999
+  <X> = -0.8051200000000001
+  Energy = -0.9477037849201799
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.017872653818790385
+  <X> = -0.9820694288394889
+  Energy = -0.9951828940216052
+  measure Z: {'0': 50893.63269093952, '1': 49106.36730906048})
+  measure X: {'0': 896.5285580255627, '1': 99103.47144197443})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_9/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+

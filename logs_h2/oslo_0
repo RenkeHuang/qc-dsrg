@@ -1,0 +1,51 @@
+
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibm_oslo
+Calibration matrix =
+[[0.93455 0.0114 ]
+ [0.06545 0.9886 ]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+   ==> Run 3-point Fourier quadrature <==
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+  t = -0.175140, run on ibm_oslo , measure Z 20000 shots.
+  t = -0.175140, run on ibm_oslo , measure X 20000 shots.
+  t = 0.872057, run on ibm_oslo , measure Z 20000 shots.
+  t = 0.872057, run on ibm_oslo , measure X 20000 shots.
+  t = -1.222338, run on ibm_oslo , measure Z 20000 shots.
+  t = -1.222338, run on ibm_oslo , measure X 20000 shots.
+Calibrate raw counts
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -2.220446049250313e-16, b = -0.9753315962732311, c = 0.17258813211389312
+
+  t_opt = -0.175140281
+    <Z>_opt = cos(t_opt) = 0.984702105
+    <X>_opt = sin(t_opt) = -0.174246274
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_oslo , measure Z 20000 shots.
+  t = -0.175140, run on ibm_oslo , measure X 20000 shots.
+  measure Z: {'0': 19961.003087444515, '1': 38.99691255548475})
+  measure X: {'0': 8297.67643270345, '1': 11702.32356729655})
+
+   ==> Compute E_ref, g1 g2 <==
+  <Z> = 0.9961003087444515
+  <X> = -0.17023235672965492
+  Energy = -1.141787650067248
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/oslo/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+

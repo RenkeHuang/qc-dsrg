@@ -1,0 +1,250 @@
+
+Set-0
+
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibmq_lima
+Calibration matrix =
+[[0.99015 0.0381 ]
+ [0.00985 0.9619 ]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.175140, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.175140, run on ibmq_lima , measure X 20000 shots.
+  t = 0.872057, run on ibmq_lima , measure Z 20000 shots.
+  t = 0.872057, run on ibmq_lima , measure X 20000 shots.
+  t = -1.222338, run on ibmq_lima , measure Z 20000 shots.
+  t = -1.222338, run on ibmq_lima , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 1.1102230246251565e-16, b = -0.9753315962732314, c = 0.17258813211389312
+
+  t_opt = -0.175140281
+    <Z>_opt = cos(t_opt) = 0.984702105
+    <X>_opt = sin(t_opt) = -0.174246274
+   === End 3-point Fourier quadrature ===
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.175140, run on ibmq_lima , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9674
+  <X> = -0.1587
+  Energy = -1.1118049842191455
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.986450293544022
+  <X> = -0.1963657372982971
+  Energy = -1.1368859966759157
+  measure Z: {'0': 19864.50293544022, '1': 135.49706455978077})
+  measure X: {'0': 8036.342627017029, '1': 11963.657372982969})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/lima_0/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.190031, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.190031, run on ibmq_lima , measure X 20000 shots.
+  t = 0.857166, run on ibmq_lima , measure Z 20000 shots.
+  t = 0.857166, run on ibmq_lima , measure X 20000 shots.
+  t = -1.237229, run on ibmq_lima , measure Z 20000 shots.
+  t = -1.237229, run on ibmq_lima , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 2.220446049250313e-16, b = -0.893017040471162, c = 0.1717739834640627
+
+  t_opt = -0.190031414
+    <Z>_opt = cos(t_opt) = 0.981998302
+    <X>_opt = sin(t_opt) = -0.188889744
+   === End 3-point Fourier quadrature ===
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.190031, run on ibmq_lima , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9679
+  <X> = -0.18330000000000002
+  Energy = -1.1302605718187966
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9869754740491429
+  <X> = -0.22220471721949697
+  Energy = -1.1539781134520828
+  measure Z: {'0': 19869.75474049143, '1': 130.24525950857083})
+  measure X: {'0': 7777.95282780503, '1': 12222.047172194969})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/lima_0/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.205966, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.205966, run on ibmq_lima , measure X 20000 shots.
+  t = 0.841231, run on ibmq_lima , measure Z 20000 shots.
+  t = 0.841231, run on ibmq_lima , measure X 20000 shots.
+  t = -1.253164, run on ibmq_lima , measure Z 20000 shots.
+  t = -1.253164, run on ibmq_lima , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.8187492286324076, c = 0.17106068808312366
+
+  t_opt = -0.205966480
+    <Z>_opt = cos(t_opt) = 0.978863784
+    <X>_opt = sin(t_opt) = -0.204513307
+   === End 3-point Fourier quadrature ===
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.205966, run on ibmq_lima , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9612
+  <X> = -0.2015
+  Energy = -1.1352338235110297
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.979938029718684
+  <X> = -0.24132135930244458
+  Energy = -1.1573874400119748
+  measure Z: {'0': 19799.380297186843, '1': 200.619702813157})
+  measure X: {'0': 7586.786406975554, '1': 12413.213593024446})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/lima_0/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.222974, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.222974, run on ibmq_lima , measure X 20000 shots.
+  t = 0.824224, run on ibmq_lima , measure Z 20000 shots.
+  t = 0.824224, run on ibmq_lima , measure X 20000 shots.
+  t = -1.270171, run on ibmq_lima , measure Z 20000 shots.
+  t = -1.270171, run on ibmq_lima , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.7517624545623149, c = 0.17045757337561956
+
+  t_opt = -0.222973719
+    <Z>_opt = cos(t_opt) = 0.975244182
+    <X>_opt = sin(t_opt) = -0.221130698
+   === End 3-point Fourier quadrature ===
+
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.222974, run on ibmq_lima , measure X 20000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9591000000000001
+  <X> = -0.21049999999999996
+  Energy = -1.1382948512581716
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9777322620435782
+  <X> = -0.2507746445111536
+  Energy = -1.159167004478037
+  measure Z: {'0': 19777.322620435778, '1': 222.6773795642195})
+  measure X: {'0': 7492.253554888465, '1': 12507.746445111537})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/lima_0/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.241103, run on ibmq_lima , measure Z 20000 shots.
+  t = -0.241103, run on ibmq_lima , measure X 20000 shots.
+  t = 0.806095, run on ibmq_lima , measure Z 20000 shots.
+  t = 0.806095, run on ibmq_lima , measure X 20000 shots.
+  t = -1.288300, run on ibmq_lima , measure Z 20000 shots.
+  t = -1.288300, run on ibmq_lima , measure X 20000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.6912180276548994, c = 0.16996057197909595
+
+
+
+### Restart, outputs for 0.8(partial), 0.85, 1.15 missing due to internet disconnection.
+
+Set-0
+
+   ==> Run Calibration circuits <== 
+n_shots       =      20000
+Backend       =      ibmq_lima

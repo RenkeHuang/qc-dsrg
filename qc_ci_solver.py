@@ -1,5 +1,5 @@
-#!/home/renke/.conda/envs/psi4-2021/bin/python
-"""
+#!/home/renke/.conda/envs/forte_env/bin/python
+""" 
 originally copied from ~/papers-collaborative/qc-dsrg/results/qc_1q_nftopt.py
 """
 
@@ -31,40 +31,49 @@ def get_diag_element(occ, scalar_e, oei, tei):
             h += 0.5 * tei[(i, j, i, j)]
     return h
 
+def intsdict2coeffs(mol_data):
+    scalar_energy = mol_data['scalar_energy']['data']
+    oei = {(i, j): h_ij for [i, j, h_ij] in mol_data['oei']['data']}
+    tei = {(i, j, k, l): h_ijkl
+            for [i, j, k, l, h_ijkl] in mol_data['tei']['data']}
 
-def get_coeffs(r_path):
+    h_00 = get_diag_element([0, 1], scalar_energy, oei, tei)
+    h_11 = get_diag_element([2, 3], scalar_energy, oei, tei)
+    h_10 = tei[(0, 1, 2, 3)]
+    print(f'h_00:{h_00}, h_11:{h_11}, h_10:{h_10}')
+
+    c_0 = (h_00 + h_11) / 2.
+    c_z = np.real((h_00 - h_11) / 2.)
+    c_x = np.real(h_10)
+    
+    return c_z, c_x, c_0
+    
+    
+def get_coeffs(r_path, use_dressed_h = False):
     print('---------------------------------------------------------------')
     additional_info = {}
-
-    if os.path.isfile(f'{r_path}/forte_ints.json'):
-        print(f'Find forte_ints.json in {r_path}')
-        with open(f'{r_path}/forte_ints.json', 'r') as read_file:
+    if use_dressed_h:
+        print(f'Read dsrg_ints.json in {r_path}')
+        with open(f'{r_path}/dsrg_ints.json', 'r') as read_file:
             mol_data = json.load(read_file)
+        c_z, c_x, c_0 = intsdict2coeffs(mol_data)
+    else:
+        if os.path.isfile(f'{r_path}/forte_ints.json'):
+            print(f'Find forte_ints.json in {r_path}')
+            with open(f'{r_path}/forte_ints.json', 'r') as read_file:
+                mol_data = json.load(read_file)
+            c_z, c_x, c_0 = intsdict2coeffs(mol_data)
+        
+        elif os.path.isfile(f'{r_path}/oq_map.json'):
+            print(f'Find oq_map.json in {r_path}')
+            with open(f'{r_path}/oq_map.json', "r") as file:
+                oq_map_data = json.load(file)
 
-        scalar_energy = mol_data['scalar_energy']['data']
-        oei = {(i, j): h_ij for [i, j, h_ij] in mol_data['oei']['data']}
-        tei = {(i, j, k, l): h_ijkl
-                for [i, j, k, l, h_ijkl] in mol_data['tei']['data']}
-
-        h_00 = get_diag_element([0, 1], scalar_energy, oei, tei)
-        h_11 = get_diag_element([2, 3], scalar_energy, oei, tei)
-        h_10 = tei[(0, 1, 2, 3)]
-        print(f'h_00:{h_00}, h_11:{h_11}, h_10:{h_10}')
-
-        c_0 = (h_00 + h_11) / 2.
-        c_z = np.real((h_00 - h_11) / 2.)
-        c_x = np.real(h_10)
-
-    elif os.path.isfile(f'{r_path}/oq_map.json'):
-        print(f'Find oq_map.json in {r_path}')
-        with open(f'{r_path}/oq_map.json', "r") as file:
-            oq_map_data = json.load(file)
-
-        c_0 = oq_map_data['c0']
-        c_z = oq_map_data['cz']
-        c_x = oq_map_data['cx']
-        additional_info['hamiltonian'] = oq_map_data['hamiltonian']
-        additional_info['scalar_e'] = oq_map_data['scalar_e']
+            c_0 = oq_map_data['c0']
+            c_z = oq_map_data['cz']
+            c_x = oq_map_data['cx']
+            additional_info['hamiltonian'] = oq_map_data['hamiltonian']
+            additional_info['scalar_e'] = oq_map_data['scalar_e']
 
     return c_z, c_x, c_0, additional_info
 
@@ -286,15 +295,9 @@ def get_meas_fitter_object(options):
 
     return meas_filter
 
-
-def run_one_vqe(options):
-    c_z, c_x, c_0 = options['cz_cx_c0']
-    print(f'c_z = {c_z:.9f}\nc_x = {c_x:.9f}\nc_0 = {c_0:.9f}\n')
-
+def three_pts_quadrature(t_A, options):
     print(f'   ==> Run 3-point Fourier quadrature <==')
-    t_A = get_optimal_t(c_x, c_z)
-    print(f'  t_A = {t_A:.9f}\n    <Z>_A = cos(t_A) = {np.cos(t_A):.9f}\n    <X>_A = sin(t_A) = {np.sin(t_A):.9f}\n')
-
+    c_z, c_x, _ = options['cz_cx_c0']
     # 3-point Fourier quadrature points (http://arxiv.org/abs/1904.03206)
     # E(t) = a + b*cos(t) + c*sin(t)
     counts_list = [measure_1q('Z', t_A, options),
@@ -307,14 +310,13 @@ def run_one_vqe(options):
                    measure_1q('X', t_A-pi/3., options),
                    ]
 
+    calibration_info = {}
     if 'do_readout_calibration' in options.keys():
-        print('\nCalibrate 6 raw counts for 3-point quadrature')
-        calibration_info = {'3ts_counts_raw': counts_list}
-        meas_filter = options['filter']
+        print('\nCalibrate 6 raw counts for 3-point quadrature...')
+        calibration_info['3ts_counts_raw'] = counts_list
         # Use filter object to calibrate raw data
-        counts_list = [meas_filter.apply(counts) for counts in counts_list.copy()]
+        counts_list = [options['filter'].apply(counts) for counts in counts_list.copy()]
         calibration_info['3ts_counts_cal'] = counts_list
-
 
     avgs = [get_amps_1q(counts)[0] - get_amps_1q(counts)[1] for counts in counts_list]
     es = [c_z * avgs[2 * i] + c_x * avgs[2 * i + 1] for i in range(3)]
@@ -328,7 +330,24 @@ def run_one_vqe(options):
     print(f'  a = {a}, b = {b}, c = {c}')
 
     t_opt = get_optimal_t(c, b)
-    print(f'\n  t_opt = {t_opt:.9f}\n    <Z>_opt = cos(t_opt) = {np.cos(t_opt):.9f}\n    <X>_opt = sin(t_opt) = {np.sin(t_opt):.9f}\n')
+    print(f'\n  t_opt = {t_opt:.9f}\n    <Z>_opt = cos(t_opt) = {np.cos(t_opt):.9f}\n    <X>_opt = sin(t_opt) = {np.sin(t_opt):.9f}')
+    print(f'   === End 3-point Fourier quadrature ===\n')
+    return t_opt, calibration_info
+
+
+def run_one_vqe(options):
+    c_z, c_x, c_0 = options['cz_cx_c0']
+    print(f'c_z = {c_z:.9f}\nc_x = {c_x:.9f}\nc_0 = {c_0:.9f}\n')
+
+    t_A = get_optimal_t(c_x, c_z)
+    print(f'  t_A = {t_A:.9f}\n    <Z>_A = cos(t_A) = {np.cos(t_A):.9f}\n    <X>_A = sin(t_A) = {np.sin(t_A):.9f}\n')
+
+    if 'skip_3pt_quadrature' in options.keys():
+        print('Skip 3-point Fourier quadrature...\n')
+        t_opt = t_A
+        calibration_info = {}
+    else:
+        t_opt, calibration_info = three_pts_quadrature(t_A, options)
 
     print('Measure Z, X on circuit parametrized by t_opt:')
     counts_z = measure_1q('Z', t_opt, options)
@@ -348,15 +367,15 @@ def run_one_vqe(options):
     if 'do_readout_calibration' in options.keys():
         calibration_info['topt_counts_z_raw'] = counts_z
         calibration_info['topt_counts_x_raw'] = counts_x
-        print('\nCalibrate 2 raw counts for final energy')
-        counts_z = meas_filter.apply(counts_z)
-        counts_x = meas_filter.apply(counts_x)
+        print('\nCalibrate 2 raw counts for final energy...')
+        counts_z = options['filter'].apply(counts_z)
+        counts_x = options['filter'].apply(counts_x)
         calibration_info['topt_counts_z_cal'] = counts_z
         calibration_info['topt_counts_x_cal'] = counts_x
         c1sq, c2sq, avg_x, e = op_averaging(counts_z, counts_x)
 
         with open('calibration_info.json', 'w') as file:
-            json.dump(calibration_info, file, indent=4)
+            json.dump(calibration_info, file, indent=2)
 
     print(f'  measure Z: {counts_z})')
     print(f'  measure X: {counts_x})')
@@ -373,20 +392,19 @@ def run_one_vqe(options):
     return vqe_result
 
 
-
 def run_pec(i=0):
-
-    from qiskit import Aer, IBMQ
-    IBMQ.load_account()
+    print(f'\nSet-{i}')
     provider = IBMQ.get_provider(hub='ibm-q')
-    # provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
+#     provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
 
-    options = {
-        'n_shots': 20000,
-        ### Aer.get_backend('qasm_simulator')      provider.get_backend('ibmq_belem')
-        'backend': provider.get_backend('ibmq_armonk'),
+    options = {  # ibm_perth, ibmq_jakarta: 100000 / 20000 (armonk, belem, lima, ibm_oslo)
+        'n_shots': 100000,
+        ### Aer.get_backend('qasm_simulator')    provider.get_backend('ibmq_perth')
+        'backend': provider.get_backend('ibm_perth')    ,
         'do_readout_calibration': True,
-        # 'device_for_noise_model': provider.get_backend('ibmq_armonk'),
+        'skip_3pt_quadrature': True,
+#         'device_for_noise_model': provider.get_backend('ibmq_armonk')   ,
+        'use_dressed_h': True
     }
     if 'do_readout_calibration' in options.keys():
         options['filter'] = get_meas_fitter_object(options)
@@ -400,15 +418,22 @@ def run_pec(i=0):
 
 
     rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , \
-            1.205, 1.21 , 1.215, 1.22, \
+            # 1.205, 1.21 , 1.215, 1.22, \
             1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
 
-    maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
+# '1-QDSRG': 'MK',
+# '2-QDSRG': 'MK',
+# '1-QDSRG_3pdc0': 'zero',
+# '2-QDSRG_3pdc0': 'zero',
+    
     # maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
+#     maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
+    maindir = "/home/renke/computations/H2/cas/cc-pV5Z/2-QDSRG_3pdc0"
 
-    for r in [1.45, 1.6, 1.9, 2.5, 2.95, 6.]:
+    for r in rvals:
         r_path = f'{maindir}/{r}'
-        c_z, c_x, c_0, additional_info = get_coeffs(r_path)
+        c_z, c_x, c_0, additional_info = get_coeffs(r_path,  \
+                                                    use_dressed_h=options['use_dressed_h'])
         options['cz_cx_c0'] = (c_z, c_x, c_0)
 
         rdm_path = f'{maindir}/{options["backend_name"]}{options["noise_model_name"]}_{i}/{r}'
@@ -423,6 +448,11 @@ def run_pec(i=0):
             file.write(
                 f"{r}    {vqe_result['energy']['data']:.9f}  {vqe_result['t_A']:.7f}  {vqe_result['t_exp']:.7f}  {vqe_result['c1sq']:.9f}  {vqe_result['c2sq']:.9f}  {vqe_result['avg_x']:.9f} \n"
             )
+            
+        fname = f'{options["backend_name"]}{options["noise_model_name"]}_1e5'
+        with open(f'{r_path}/{fname}.dat', 'a') as file:
+            file.write(f"{label}_{i}    {vqe_result['energy']['data']}\n")
+
 
         rdms = {key: vqe_result[key] for key in ['energy', 'gamma1', 'gamma2']}
         with open(f'rdms.json', 'w') as file:
@@ -430,7 +460,6 @@ def run_pec(i=0):
         print(f'Save rdms.json to {os.getcwd()}')
 
         os.chdir(maindir)
-
 
         if 'hamiltonian' in additional_info.keys():
             evals, _ = np.linalg.eigh(additional_info['hamiltonian'])
@@ -443,5 +472,10 @@ def run_pec(i=0):
 
 
 if __name__ == "__main__":
-    for i in range(10):
-        run_pec(i)
+    from qiskit import Aer, IBMQ
+    IBMQ.load_account()
+
+    run_pec()
+    
+#     for i in range(1, 10):
+#         run_pec(i)

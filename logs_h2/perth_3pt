@@ -1,0 +1,773 @@
+
+   ==> Run Calibration circuits <== 
+n_shots       =     100000
+Backend       =      ibm_perth
+Calibration matrix =
+[[0.95026 0.09278]
+ [0.04974 0.90722]]
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.6
+c_z = -0.975331596
+c_x = 0.172588132
+c_0 = -0.140879461
+
+  t_A = -0.175140281
+    <Z>_A = cos(t_A) = 0.984702105
+    <X>_A = sin(t_A) = -0.174246274
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+  t = 0.872057, run on ibm_perth , measure Z 100000 shots.
+  t = 0.872057, run on ibm_perth , measure X 100000 shots.
+  t = -1.222338, run on ibm_perth , measure Z 100000 shots.
+  t = -1.222338, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 2.220446049250313e-16, b = -0.9753315962732315, c = 0.17258813211389307
+
+  t_opt = -0.175140281
+    <Z>_opt = cos(t_opt) = 0.984702105
+    <X>_opt = sin(t_opt) = -0.174246274
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.175140, run on ibm_perth , measure Z 100000 shots.
+  t = -0.175140, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9408000000000001
+  <X> = -0.09735999999999995
+  Energy = -1.0752746077344113
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.1637355976162178
+  Energy = -1.1444698786443128
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41813.22011918911, '1': 58186.77988081089})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.6
+
+   ==> (oq_map.json) Exact results for r = 0.6 <== 
+evals = [-1.13136338  0.84960445]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.131363376499586
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.65
+c_z = -0.893017040
+c_x = 0.171773983
+c_0 = -0.234423207
+
+  t_A = -0.190031414
+    <Z>_A = cos(t_A) = 0.981998302
+    <X>_A = sin(t_A) = -0.188889744
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+  t = 0.857166, run on ibm_perth , measure Z 100000 shots.
+  t = 0.857166, run on ibm_perth , measure X 100000 shots.
+  t = -1.237229, run on ibm_perth , measure Z 100000 shots.
+  t = -1.237229, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 1.1102230246251565e-16, b = -0.893017040471162, c = 0.17177398346406267
+
+  t_opt = -0.190031414
+    <Z>_opt = cos(t_opt) = 0.981998302
+    <X>_opt = sin(t_opt) = -0.188889744
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.190031, run on ibm_perth , measure Z 100000 shots.
+  t = -0.190031, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9373199999999999
+  <X> = -0.11034000000000005
+  Energy = -1.0904194808876504
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.17887298101074361
+  Energy = -1.1581659721312654
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 41056.35094946282, '1': 58943.649050537184})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.65
+
+   ==> (oq_map.json) Exact results for r = 0.65 <== 
+evals = [-1.14381077  0.67496435]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1438107681038217
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.7
+c_z = -0.818749229
+c_x = 0.171060688
+c_0 = -0.313783336
+
+  t_A = -0.205966480
+    <Z>_A = cos(t_A) = 0.978863784
+    <X>_A = sin(t_A) = -0.204513307
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+  t = 0.841231, run on ibm_perth , measure Z 100000 shots.
+  t = 0.841231, run on ibm_perth , measure X 100000 shots.
+  t = -1.253164, run on ibm_perth , measure Z 100000 shots.
+  t = -1.253164, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -1.1102230246251565e-16, b = -0.8187492286324075, c = 0.17106068808312364
+
+  t_opt = -0.205966480
+    <Z>_opt = cos(t_opt) = 0.978863784
+    <X>_opt = sin(t_opt) = -0.204513307
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.205966, run on ibm_perth , measure Z 100000 shots.
+  t = -0.205966, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93608
+  <X> = -0.12064000000000002
+  Energy = -1.1008348756493822
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.19088491859198436
+  Energy = -1.1651854704522537
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 40455.75407040078, '1': 59544.245929599216})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.7
+
+   ==> (oq_map.json) Exact results for r = 0.7 <== 
+evals = [-1.15021149  0.52264482]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1502114912511527
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.75
+c_z = -0.751762455
+c_x = 0.170457573
+c_0 = -0.381398162
+
+  t_A = -0.222973719
+    <Z>_A = cos(t_A) = 0.975244182
+    <X>_A = sin(t_A) = -0.221130698
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+  t = 0.824224, run on ibm_perth , measure Z 100000 shots.
+  t = 0.824224, run on ibm_perth , measure X 100000 shots.
+  t = -1.270171, run on ibm_perth , measure Z 100000 shots.
+  t = -1.270171, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.7517624545623149, c = 0.17045757337561956
+
+  t_opt = -0.222973719
+    <Z>_opt = cos(t_opt) = 0.975244182
+    <X>_opt = sin(t_opt) = -0.221130698
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.222974, run on ibm_perth , measure Z 100000 shots.
+  t = -0.222974, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.93326
+  <X> = -0.1357
+  Energy = -1.1061190829437848
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9999999999999999
+  <X> = -0.20844801043410355
+  Energy = -1.1686921584877754
+  measure Z: {'0': 100000.0, '1': 5.2595973112418886e-12})
+  measure X: {'0': 39577.59947829482, '1': 60422.40052170518})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.75
+
+   ==> (oq_map.json) Exact results for r = 0.75 <== 
+evals = [-1.15224352  0.3894472 ]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1522435240824251
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.8
+c_z = -0.691218028
+c_x = 0.169960572
+c_0 = -0.439308382
+
+  t_A = -0.241102571
+    <Z>_A = cos(t_A) = 0.971075301
+    <X>_A = sin(t_A) = -0.238773451
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+  t = 0.806095, run on ibm_perth , measure Z 100000 shots.
+  t = 0.806095, run on ibm_perth , measure X 100000 shots.
+  t = -1.288300, run on ibm_perth , measure Z 100000 shots.
+  t = -1.288300, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.6912180276548994, c = 0.16996057197909592
+
+  t_opt = -0.241102571
+    <Z>_opt = cos(t_opt) = 0.971075301
+    <X>_opt = sin(t_opt) = -0.238773451
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.241103, run on ibm_perth , measure Z 100000 shots.
+  t = -0.241103, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9301999999999999
+  <X> = -0.15136
+  Energy = -1.1080046235371896
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.22671082811460463
+  Energy = -1.1690583117129587
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 38664.45859426977, '1': 61335.54140573023})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.8
+
+   ==> (oq_map.json) Exact results for r = 0.8 <== 
+evals = [-1.15111521  0.27249844]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1511152082081149
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/0.85
+c_z = -0.636488864
+c_x = 0.169579229
+c_0 = -0.489018448
+
+  t_A = -0.260380693
+    <Z>_A = cos(t_A) = 0.966292039
+    <X>_A = sin(t_A) = -0.257448431
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+  t = 0.786817, run on ibm_perth , measure Z 100000 shots.
+  t = 0.786817, run on ibm_perth , measure X 100000 shots.
+  t = -1.307578, run on ibm_perth , measure Z 100000 shots.
+  t = -1.307578, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.636488864240029, c = 0.1695792294651544
+
+  t_opt = -0.260380693
+    <Z>_opt = cos(t_opt) = 0.966292039
+    <X>_opt = sin(t_opt) = -0.257448431
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.260381, run on ibm_perth , measure Z 100000 shots.
+  t = -0.260381, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.9241999999999999
+  <X> = -0.16924
+  Energy = -1.1059610451909954
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 1.0
+  <X> = -0.24756262536723528
+  Energy = -1.1674887915598533
+  measure Z: {'0': 100000.0, '1': 0})
+  measure X: {'0': 37621.868731638235, '1': 62378.13126836177})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/0.85
+
+   ==> (oq_map.json) Exact results for r = 0.85 <== 
+evals = [-1.14771048  0.16967358]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.147710477292962
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.15
+c_z = -0.399295092
+c_x = 0.169766330
+c_0 = -0.672952709
+
+  t_A = -0.402010464
+    <Z>_A = cos(t_A) = 0.920276221
+    <X>_A = sin(t_A) = -0.391269314
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+  t = 0.645187, run on ibm_perth , measure Z 100000 shots.
+  t = 0.645187, run on ibm_perth , measure X 100000 shots.
+  t = -1.449208, run on ibm_perth , measure Z 100000 shots.
+  t = -1.449208, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.3992950916910412, c = 0.1697663300774526
+
+  t_opt = -0.402010464
+    <Z>_opt = cos(t_opt) = 0.920276221
+    <X>_opt = sin(t_opt) = -0.391269314
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.402010, run on ibm_perth , measure Z 100000 shots.
+  t = -0.402010, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8814
+  <X> = -0.28586
+  Energy = -1.073420806009751
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9777021138593346
+  <X> = -0.38356579746459
+  Energy = -1.1284609220561093
+  measure Z: {'0': 98885.10569296672, '1': 1114.8943070332698})
+  measure X: {'0': 30821.7101267705, '1': 69178.2898732295})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.15
+
+   ==> (oq_map.json) Exact results for r = 1.15 <== 
+evals = [-1.10683884 -0.23906658]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.1068388428457654
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.2
+c_z = -0.371037374
+c_x = 0.170213481
+c_0 = -0.690922272
+
+  t_A = -0.430106748
+    <Z>_A = cos(t_A) = 0.908921244
+    <X>_A = sin(t_A) = -0.416967830
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+  t = 0.617091, run on ibm_perth , measure Z 100000 shots.
+  t = 0.617091, run on ibm_perth , measure X 100000 shots.
+  t = -1.477304, run on ibm_perth , measure Z 100000 shots.
+  t = -1.477304, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 5.551115123125783e-17, b = -0.37103737361427747, c = 0.17021348058116212
+
+  t_opt = -0.430106748
+    <Z>_opt = cos(t_opt) = 0.908921244
+    <X>_opt = sin(t_opt) = -0.416967830
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.430107, run on ibm_perth , measure Z 100000 shots.
+  t = -0.430107, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.8687
+  <X> = -0.31113999999999997
+  Energy = -1.066202660760726
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9628912627700584
+  <X> = -0.4130475330570204
+  Energy = -1.118497175415416
+  measure Z: {'0': 98144.56313850293, '1': 1855.4368614970697})
+  measure X: {'0': 29347.62334714898, '1': 70652.37665285103})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.2
+
+   ==> (oq_map.json) Exact results for r = 1.2 <== 
+evals = [-1.09913957 -0.28270497]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.099139568978659
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.3
+c_z = -0.321395392
+c_x = 0.171457744
+c_0 = -0.719962104
+
+  t_A = -0.490070852
+    <Z>_A = cos(t_A) = 0.882299511
+    <X>_A = sin(t_A) = -0.470688402
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+  t = 0.557127, run on ibm_perth , measure Z 100000 shots.
+  t = 0.557127, run on ibm_perth , measure X 100000 shots.
+  t = -1.537268, run on ibm_perth , measure Z 100000 shots.
+  t = -1.537268, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -5.551115123125783e-17, b = -0.3213953919185241, c = 0.17145774377906556
+
+  t_opt = -0.490070852
+    <Z>_opt = cos(t_opt) = 0.882299511
+    <X>_opt = sin(t_opt) = -0.470688402
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.490071, run on ibm_perth , measure Z 100000 shots.
+  t = -0.490071, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.84826
+  <X> = -0.35397999999999996
+  Energy = -1.0532815708094667
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.9390539721316724
+  <X> = -0.4630078837424764
+  Energy = -1.1011560100220565
+  measure Z: {'0': 96952.69860658361, '1': 3047.301393416379})
+  measure X: {'0': 26849.60581287618, '1': 73150.39418712382})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.3
+
+   ==> (oq_map.json) Exact results for r = 1.3 <== 
+evals = [-1.08423227 -0.35569193]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0842322722775133
+e_analytic - evals[0] = -0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.45
+c_z = -0.260906520
+c_x = 0.174167246
+c_0 = -0.750292491
+
+  t_A = -0.588611503
+    <Z>_A = cos(t_A) = 0.831712383
+    <X>_A = sin(t_A) = -0.555206729
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+  t = 0.458586, run on ibm_perth , measure Z 100000 shots.
+  t = 0.458586, run on ibm_perth , measure X 100000 shots.
+  t = -1.635809, run on ibm_perth , measure Z 100000 shots.
+  t = -1.635809, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 0.0, b = -0.2609065198764, c = 0.17416724617012772
+
+  t_opt = -0.588611503
+    <Z>_opt = cos(t_opt) = 0.831712383
+    <X>_opt = sin(t_opt) = -0.555206729
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.588612, run on ibm_perth , measure Z 100000 shots.
+  t = -0.588612, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.79756
+  <X> = -0.4333
+  Energy = -1.0338477623761082
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8799272286852574
+  <X> = -0.5555114988099705
+  Energy = -1.0766231495622987
+  measure Z: {'0': 93996.36143426287, '1': 6003.638565737126})
+  measure X: {'0': 22224.425059501467, '1': 77775.57494049853})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.45
+
+   ==> (oq_map.json) Exact results for r = 1.45 <== 
+evals = [-1.0639905  -0.43659448]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0639905010555568
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.6
+c_z = -0.213224929
+c_x = 0.177807023
+c_0 = -0.769382665
+
+  t_A = -0.695069165
+    <Z>_A = cos(t_A) = 0.768009407
+    <X>_A = sin(t_A) = -0.640438561
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+  t = 0.352128, run on ibm_perth , measure Z 100000 shots.
+  t = 0.352128, run on ibm_perth , measure X 100000 shots.
+  t = -1.742267, run on ibm_perth , measure Z 100000 shots.
+  t = -1.742267, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 2.7755575615628914e-17, b = -0.21322492879091287, c = 0.17780702316230246
+
+  t_opt = -0.695069165
+    <Z>_opt = cos(t_opt) = 0.768009407
+    <X>_opt = sin(t_opt) = -0.640438561
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.695069, run on ibm_perth , measure Z 100000 shots.
+  t = -0.695069, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.74492
+  <X> = -0.5126
+  Energy = -1.0193620592343355
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.8185380417176065
+  <X> = -0.6479917898959815
+  Energy = -1.059132872059319
+  measure Z: {'0': 90926.90208588033, '1': 9073.097914119675})
+  measure X: {'0': 17600.41050520092, '1': 82399.58949479909})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.6
+
+   ==> (oq_map.json) Exact results for r = 1.6 <== 
+evals = [-1.04701589 -0.49174944]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0470158904222164
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/1.9
+c_z = -0.144203901
+c_x = 0.187268886
+c_0 = -0.786868492
+
+  t_A = -0.914594616
+    <Z>_A = cos(t_A) = 0.610111817
+    <X>_A = sin(t_A) = -0.792315323
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+  t = 0.132603, run on ibm_perth , measure Z 100000 shots.
+  t = 0.132603, run on ibm_perth , measure X 100000 shots.
+  t = -1.961792, run on ibm_perth , measure Z 100000 shots.
+  t = -1.961792, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 1.3877787807814457e-17, b = -0.14420390107599915, c = 0.1872688860428362
+
+  t_opt = -0.914594616
+    <Z>_opt = cos(t_opt) = 0.610111817
+    <X>_opt = sin(t_opt) = -0.792315323
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -0.914595, run on ibm_perth , measure Z 100000 shots.
+  t = -0.914595, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.6037600000000001
+  <X> = -0.63716
+  Energy = -0.9932532824548655
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.6539161262427275
+  <X> = -0.793254653167122
+  Energy = -1.029717663337777
+  measure Z: {'0': 82695.80631213638, '1': 17304.193687863615})
+  measure X: {'0': 10337.267341643905, '1': 89662.7326583561})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/1.9
+
+   ==> (oq_map.json) Exact results for r = 1.9 <== 
+evals = [-1.023225   -0.55051198]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0232250037111297
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.5
+c_z = -0.066271102
+c_x = 0.209148615
+c_0 = -0.784992480
+
+  t_A = -1.263943124
+    <Z>_A = cos(t_A) = 0.302060331
+    <X>_A = sin(t_A) = -0.953288811
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+  t = -0.216746, run on ibm_perth , measure Z 100000 shots.
+  t = -0.216746, run on ibm_perth , measure X 100000 shots.
+  t = -2.311141, run on ibm_perth , measure Z 100000 shots.
+  t = -2.311141, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 3.469446951953614e-18, b = -0.06627110183578008, c = 0.20914861505223561
+
+  t_opt = -1.263943124
+    <Z>_opt = cos(t_opt) = 0.302060331
+    <X>_opt = sin(t_opt) = -0.953288811
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.263943, run on ibm_perth , measure Z 100000 shots.
+  t = -1.263943, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.3247
+  <X> = -0.7717799999999999
+  Energy = -0.9679274253246425
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.3284741335085635
+  <X> = -0.9502495685075568
+  Energy = -1.005504204393056
+  measure Z: {'0': 66423.70667542817, '1': 33576.29332457182})
+  measure X: {'0': 2487.5215746221525, '1': 97512.47842537783})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/2.5
+
+   ==> (oq_map.json) Exact results for r = 2.5 <== 
+evals = [-1.00438939 -0.56559557]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0043893858738882
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/2.95
+c_z = -0.036185839
+c_x = 0.223454420
+c_0 = -0.774745750
+
+  t_A = -1.410251678
+    <Z>_A = cos(t_A) = 0.159855875
+    <X>_A = sin(t_A) = -0.987140364
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+  t = -0.363054, run on ibm_perth , measure Z 100000 shots.
+  t = -0.363054, run on ibm_perth , measure X 100000 shots.
+  t = -2.457449, run on ibm_perth , measure Z 100000 shots.
+  t = -2.457449, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = -4.163336342344337e-17, b = -0.03618583852259696, c = 0.2234544196959545
+
+  t_opt = -1.410251678
+    <Z>_opt = cos(t_opt) = 0.159855875
+    <X>_opt = sin(t_opt) = -0.987140364
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.410252, run on ibm_perth , measure Z 100000 shots.
+  t = -1.410252, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.20351999999999998
+  <X> = -0.8028
+  Energy = -0.9614995004655507
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.18715305346733063
+  <X> = -0.9864253393665389
+  Energy = -1.0019391424308342
+  measure Z: {'0': 59357.65267336654, '1': 40642.34732663347})
+  measure X: {'0': 678.7330316730463, '1': 99321.26696832695})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/2.95
+
+   ==> (oq_map.json) Exact results for r = 2.95 <== 
+evals = [-1.00111115 -0.54838035]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -1.0011111466652745
+e_analytic - evals[0] = 0.000000000000
+
+---------------------------------------------------------------
+Find oq_map.json in /home/renke/computations/H2/cas/cc-pV5Z/6.0
+c_z = -0.000371898
+c_x = 0.268404889
+c_0 = -0.731584011
+
+  t_A = -1.569410743
+    <Z>_A = cos(t_A) = 0.001385583
+    <X>_A = sin(t_A) = -0.999999040
+
+   ==> Run 3-point Fourier quadrature <==
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+  t = -0.522213, run on ibm_perth , measure Z 100000 shots.
+  t = -0.522213, run on ibm_perth , measure X 100000 shots.
+  t = -2.616608, run on ibm_perth , measure Z 100000 shots.
+  t = -2.616608, run on ibm_perth , measure X 100000 shots.
+
+Calibrate 6 raw counts for 3-point quadrature...
+
+Solve linear equation E(t) = a + b*cos(t) + c*sin(t):
+  a = 4.6719796271705444e-17, b = -0.00037189768093560954, c = 0.26840488937165813
+
+  t_opt = -1.569410743
+    <Z>_opt = cos(t_opt) = 0.001385583
+    <X>_opt = sin(t_opt) = -0.999999040
+   === End 3-point Fourier quadrature ===
+Measure Z, X on circuit parametrized by t_opt:
+  t = -1.569411, run on ibm_perth , measure Z 100000 shots.
+  t = -1.569411, run on ibm_perth , measure X 100000 shots.
+
+Estimate expectations from counts:
+  <Z> = 0.06394000000000005
+  <X> = -0.8049599999999999
+  Energy = -0.9476629897064762
+
+Calibrate 2 raw counts for final energy...
+
+Estimate expectations from counts:
+  <Z> = 0.024373746335813573
+  <X> = -0.9889443485563095
+  Energy = -0.9970305738288681
+  measure Z: {'0': 51218.68731679068, '1': 48781.31268320932})
+  measure X: {'0': 552.7825721845294, '1': 99447.21742781547})
+Save rdms.json to /home/renke/computations/H2/cas/cc-pV5Z/perth_10/6.0
+
+   ==> (oq_map.json) Exact results for r = 6.0 <== 
+evals = [-0.99998916 -0.46317886]
+e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = -0.9999891578395312
+e_analytic - evals[0] = 0.000000000000
+
