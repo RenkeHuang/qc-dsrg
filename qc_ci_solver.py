@@ -1,6 +1,6 @@
 #!/home/renke/.conda/envs/forte_env/bin/python
 """ 
-originally copied from ~/papers-collaborative/qc-dsrg/results/qc_1q_nftopt.py
+originally copied from `/home/renke/papers-collaborative/qc-dsrg/results/qc_1q_nftopt.py`
 """
 
 import numpy as np
@@ -8,6 +8,7 @@ import numpy as np
 from math import pi
 import json
 import os
+import argparse
 
 from qiskit.providers.aer.noise import NoiseModel
 from qiskit import execute
@@ -394,14 +395,14 @@ def run_one_vqe(options):
 
 def run_pec(i=0):
     print(f'\nSet-{i}')
-    provider = IBMQ.get_provider(hub='ibm-q')
-#     provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
+#     provider = IBMQ.get_provider(hub='ibm-q')
+    provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
 
     options = {  # ibm_perth, ibmq_jakarta: 100000 / 20000 (armonk, belem, lima, ibm_oslo)
         'n_shots': 100000,
         ### Aer.get_backend('qasm_simulator')    provider.get_backend('ibmq_perth')
         'backend': provider.get_backend('ibm_perth')    ,
-        'do_readout_calibration': True,
+        'do_readout_calibration': True,  # two circuits per calibration matrix
         'skip_3pt_quadrature': True,
 #         'device_for_noise_model': provider.get_backend('ibmq_armonk')   ,
         'use_dressed_h': True
@@ -418,15 +419,14 @@ def run_pec(i=0):
 
 
     rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , \
-            # 1.205, 1.21 , 1.215, 1.22, \
-            1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
+             1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
 
 # '1-QDSRG': 'MK',
 # '2-QDSRG': 'MK',
 # '1-QDSRG_3pdc0': 'zero',
 # '2-QDSRG_3pdc0': 'zero',
     
-    # maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
+#     maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
 #     maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
     maindir = "/home/renke/computations/H2/cas/cc-pV5Z/2-QDSRG_3pdc0"
 
@@ -449,8 +449,8 @@ def run_pec(i=0):
                 f"{r}    {vqe_result['energy']['data']:.9f}  {vqe_result['t_A']:.7f}  {vqe_result['t_exp']:.7f}  {vqe_result['c1sq']:.9f}  {vqe_result['c2sq']:.9f}  {vqe_result['avg_x']:.9f} \n"
             )
             
-        fname = f'{options["backend_name"]}{options["noise_model_name"]}_1e5'
-        with open(f'{r_path}/{fname}.dat', 'a') as file:
+        label = f'{options["backend_name"]}{options["noise_model_name"]}'
+        with open(f'{r_path}/{label}.dat', 'a') as file:
             file.write(f"{label}_{i}    {vqe_result['energy']['data']}\n")
 
 
@@ -474,8 +474,9 @@ def run_pec(i=0):
 if __name__ == "__main__":
     from qiskit import Aer, IBMQ
     IBMQ.load_account()
-
-    run_pec()
     
-#     for i in range(1, 10):
+    # rerun two calibration circuits per pec.
+    run_pec() # set_0
+    
+#     for i in range(1, 10): # set_{1-9}
 #         run_pec(i)

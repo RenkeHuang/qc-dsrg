@@ -6,8 +6,12 @@
 
 2. Experiments on ibmq backend
 - [qc_ci_solver.py](https://github.com/RenkeHuang/qc-dsrg/blob/main/qc_ci_solver.py)
-- [Qiskit](https://github.com/Qiskit/qiskit) is installed in **psi4-2021** conda enviroment.
+- [Qiskit](https://github.com/Qiskit/qiskit) is installed in **forte_env** conda enviroment.
+- copies of `qc_ci_solver.py` on the cluster:
+    /home/renke/computations/H2/cas/cc-pV5Z/qc_ci_solver.py 
+    /home/renke/computations/bicbut_isomerization/qc_ci_solver.py 
 
 3. SA-MR-LDSRG(2) downfolding
-- `qc`branch, need to use *external* active_space_solver
+- `qc`branch, use *external* active_space_solver
+- use `relax_ref  once` option to get `dsrg_ints.json` (1-QDSRG or 2-QDSRG approximated), and `external_partial_relax  true` get the exact relaxed energy of 1-QDSRG or 2-QDSRG.
 
