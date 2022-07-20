@@ -1,6 +1,7 @@
 #!/home/renke/.conda/envs/forte_env/bin/python
 """ 
 originally copied from `/home/renke/papers-collaborative/qc-dsrg/results/qc_1q_nftopt.py`
+current version copied from `/home/renke/computations/qc-dsrg/qc_ci_solver.py` 
 """
 
 import numpy as np
@@ -267,8 +268,8 @@ def compute_rdms(c1sq, c2sq, avg_x):
 def get_meas_fitter_object(options):
     ## Import measurement calibration functions
     from qiskit.ignis.mitigation.measurement import complete_meas_cal, CompleteMeasFitter
-
-    n_shots = options['n_shots']
+    
+    n_shots = int(options['n_shots'])
     set_backend = options['backend']
     if 'device_for_noise_model' in options.keys():
         device_for_noise_model = options['device_for_noise_model']
@@ -343,7 +344,7 @@ def run_one_vqe(options):
     t_A = get_optimal_t(c_x, c_z)
     print(f'  t_A = {t_A:.9f}\n    <Z>_A = cos(t_A) = {np.cos(t_A):.9f}\n    <X>_A = sin(t_A) = {np.sin(t_A):.9f}\n')
 
-    if 'skip_3pt_quadrature' in options.keys():
+    if options['skip_3pt_quadrature']:
         print('Skip 3-point Fourier quadrature...\n')
         t_opt = t_A
         calibration_info = {}
@@ -393,20 +394,9 @@ def run_one_vqe(options):
     return vqe_result
 
 
-def run_pec(i=0):
+def run_pec(options, i=0):
     print(f'\nSet-{i}')
-#     provider = IBMQ.get_provider(hub='ibm-q')
-    provider = IBMQ.get_provider(project='vqe-dsrg-hardwar')
-
-    options = {  # ibm_perth, ibmq_jakarta: 100000 / 20000 (armonk, belem, lima, ibm_oslo)
-        'n_shots': 100000,
-        ### Aer.get_backend('qasm_simulator')    provider.get_backend('ibmq_perth')
-        'backend': provider.get_backend('ibm_perth')    ,
-        'do_readout_calibration': True,  # two circuits per calibration matrix
-        'skip_3pt_quadrature': True,
-#         'device_for_noise_model': provider.get_backend('ibmq_armonk')   ,
-        'use_dressed_h': True
-    }
+    
     if 'do_readout_calibration' in options.keys():
         options['filter'] = get_meas_fitter_object(options)
 
@@ -415,34 +405,27 @@ def run_pec(i=0):
         else options['backend'].name().lstrip('ibmq').lstrip('_')
 
     options['noise_model_name'] = '_'+options['device_for_noise_model'].name().lstrip('ibmq').lstrip('_') \
-        if 'device_for_noise_model' in options.keys() else ''
-
-
+        if ('device_for_noise_model' in options.keys()) else ''
+    
+    
     rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , \
              1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
 
-# '1-QDSRG': 'MK',
-# '2-QDSRG': 'MK',
-# '1-QDSRG_3pdc0': 'zero',
-# '2-QDSRG_3pdc0': 'zero',
+    maindir = options['ints_dir']
     
-#     maindir = "/home/renke/papers-collaborative/qc-dsrg/results/casscf-orbs/ints_5z"
-#     maindir = "/home/renke/computations/H2/cas/cc-pV5Z"
-    maindir = "/home/renke/computations/H2/cas/cc-pV5Z/2-QDSRG_3pdc0"
-
     for r in rvals:
         r_path = f'{maindir}/{r}'
         c_z, c_x, c_0, additional_info = get_coeffs(r_path,  \
                                                     use_dressed_h=options['use_dressed_h'])
         options['cz_cx_c0'] = (c_z, c_x, c_0)
-
+        
         rdm_path = f'{maindir}/{options["backend_name"]}{options["noise_model_name"]}_{i}/{r}'
         if not os.path.exists(rdm_path):
             os.makedirs(rdm_path)
 
         os.chdir(rdm_path)
-
-        vqe_result = run_one_vqe(options)
+        
+        vqe_result = run_one_vqe(options) # save `calibration_info.json` in current working folder.
 
         with open(f'../vqe.dat', 'a') as file:
             file.write(
@@ -471,12 +454,46 @@ def run_pec(i=0):
             print(f'e_analytic - evals[0] = {e_analytic-evals[0]:.12f}\n')
 
 
+            
 if __name__ == "__main__":
     from qiskit import Aer, IBMQ
-    IBMQ.load_account()
+    IBMQ.load_account()  
     
-    # rerun two calibration circuits per pec.
-    run_pec() # set_0
+    options = {  
+        'provider_str': 'vqe-dsrg-hardwar' ,
+        'backend': None ,
+        'n_shots': 20000 ,
+        'ints_dir': None ,
+        'do_readout_calibration': True  ,  
+        'skip_3pt_quadrature': True  ,
+        'use_dressed_h': True ,
+#         'device_for_noise_model': None  , # name_str
+    }
     
-#     for i in range(1, 10): # set_{1-9}
-#         run_pec(i)
+    # Update `options` form external file
+    options_arr = np.genfromtxt(fname='options.txt', dtype='unicode')
+    for line in options_arr:
+        key, val = line
+        if key in ['do_readout_calibration', 'skip_3pt_quadrature', 'use_dressed_h',]:
+            options[key] = bool(options[key])
+        else:
+            options[key] = val       
+    options['n_shots'] = int(options['n_shots'])
+   
+    
+    provider = IBMQ.get_provider(project=options['provider_str'])   
+    
+    # change name string to backend object
+    backend = Aer.get_backend('qasm_simulator') if options['backend'] == 'qasm_simulator' else provider.get_backend(options['backend']) 
+    options['backend'] = backend
+    
+    if 'device_for_noise_model' in options.keys():
+        if options['device_for_noise_model'] != None:
+            # change name string to backend object
+            options['device_for_noise_model'] = provider.get_backend(options['device_for_noise_model'])       
+    print(f'options=\n{options}') 
+    
+    run_pec(options)
+                                                                     
+#     for i in range(1, 9): 
+#         run_pec(options, i)

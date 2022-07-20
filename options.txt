@@ -1,0 +1,7 @@
+#provider_str            main
+backend                 ibmq_belem
+n_shots                 20000
+ints_dir                /home/renke/computations/H2/cas/cc-pV5Z/2-QDSRG     
+do_readout_calibration  true
+skip_3pt_quadrature     true
+use_dressed_h           true
