@@ -9,6 +9,7 @@ import numpy as np
 from math import pi
 import json
 import os
+import argparse
 
 from qiskit.providers.aer.noise import NoiseModel
 from qiskit import execute
@@ -50,25 +51,24 @@ def intsdict2coeffs(mol_data):
     return c_z, c_x, c_0
     
     
-def get_coeffs(ints_path, use_dressed_h = False):
+def get_coeffs(r_path, use_dressed_h = False):
     print('---------------------------------------------------------------')
-    additional_info = {}    
+    additional_info = {}
     if use_dressed_h:
-        print(f'Read dsrg_ints.json in {ints_path}')
-        with open(f'{ints_path}/dsrg_ints.json', 'r') as read_file:
+        print(f'Read dsrg_ints.json in {r_path}')
+        with open(f'{r_path}/dsrg_ints.json', 'r') as read_file:
             mol_data = json.load(read_file)
         c_z, c_x, c_0 = intsdict2coeffs(mol_data)
-    
     else:
-        if os.path.isfile(f'{ints_path}/forte_ints.json'):
-            print(f'Find forte_ints.json in {ints_path}')
-            with open(f'{ints_path}/forte_ints.json', 'r') as read_file:
+        if os.path.isfile(f'{r_path}/forte_ints.json'):
+            print(f'Find forte_ints.json in {r_path}')
+            with open(f'{r_path}/forte_ints.json', 'r') as read_file:
                 mol_data = json.load(read_file)
             c_z, c_x, c_0 = intsdict2coeffs(mol_data)
-
-        elif os.path.isfile(f'{ints_path}/oq_map.json'):
-            print(f'Find oq_map.json in {ints_path}')
-            with open(f'{ints_path}/oq_map.json', "r") as file:
+        
+        elif os.path.isfile(f'{r_path}/oq_map.json'):
+            print(f'Find oq_map.json in {r_path}')
+            with open(f'{r_path}/oq_map.json', "r") as file:
                 oq_map_data = json.load(file)
 
             c_0 = oq_map_data['c0']
@@ -76,8 +76,6 @@ def get_coeffs(ints_path, use_dressed_h = False):
             c_x = oq_map_data['cx']
             additional_info['hamiltonian'] = oq_map_data['hamiltonian']
             additional_info['scalar_e'] = oq_map_data['scalar_e']
-        else:
-            print('Error: integral files not found!')
 
     return c_z, c_x, c_0, additional_info
 
@@ -270,7 +268,7 @@ def compute_rdms(c1sq, c2sq, avg_x):
 def get_meas_fitter_object(options):
     ## Import measurement calibration functions
     from qiskit.ignis.mitigation.measurement import complete_meas_cal, CompleteMeasFitter
-
+    
     n_shots = int(options['n_shots'])
     set_backend = options['backend']
     if 'device_for_noise_model' in options.keys():
@@ -283,7 +281,7 @@ def get_meas_fitter_object(options):
     print(f'Backend       =      {set_backend}')
 
     meas_calibs, state_labels = complete_meas_cal(qubit_list=[0], circlabel='mea_cali')
-    if set_backend.name() == 'qasm_simulator' and 'device_for_noise_model' in options.keys():
+    if set_backend.name() == 'qasm_simulator':
         noise_model = None if device_for_noise_model == None else NoiseModel.from_backend(device_for_noise_model)
         print(f'Noise model   =      {device_for_noise_model.name()}\n{noise_model}')
         job = execute(meas_calibs, shots=n_shots, backend=set_backend, noise_model=noise_model)
@@ -396,11 +394,10 @@ def run_one_vqe(options):
     return vqe_result
 
 
-def run(options, i=0):
-    print(f'--------\noptions=\n{options}') 
+def run_pec(options, i=0):
     print(f'\nSet-{i}')
-   
-    if ('do_readout_calibration' in options.keys()) and ('filter' not in options.keys()):
+    
+    if 'do_readout_calibration' in options.keys():
         options['filter'] = get_meas_fitter_object(options)
 
     options['backend_name'] = options['backend'].name().rstrip('simulator').rstrip('_') \
@@ -408,39 +405,37 @@ def run(options, i=0):
         else options['backend'].name().lstrip('ibmq').lstrip('_')
 
     options['noise_model_name'] = '_'+options['device_for_noise_model'].name().lstrip('ibmq').lstrip('_') \
-        if 'device_for_noise_model' in options.keys() else ''
-
+        if ('device_for_noise_model' in options.keys()) else ''
     
-    maindir = "/home/renke/computations/bicbut_isomerization"
     
-    tags = [
-        'dis_TS/2-qldsrg_ccno', 
-#         'bicbut/2-qldsrg', 
-#         'con_TS/2-qldsrg', 
-#         'g-but/2-qldsrg', 
-#         'gt_TS/2-qldsrg', 
-#         't-but/2-qldsrg',
-           ]
+    rvals = [0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 1.15, 1.2 , \
+             1.3 , 1.45, 1.6 , 1.9 , 2.5 , 2.95, 6.  ]
+
+    maindir = options['ints_dir']
     
-    for tag in tags:
-        ints_path = f'{maindir}/{tag}'
-
-        c_z, c_x, c_0, additional_info = get_coeffs(ints_path, use_dressed_h=options['use_dressed_h'])
-
+    for r in rvals:
+        r_path = f'{maindir}/{r}'
+        c_z, c_x, c_0, additional_info = get_coeffs(r_path,  \
+                                                    use_dressed_h=options['use_dressed_h'])
         options['cz_cx_c0'] = (c_z, c_x, c_0)
-
-        rdm_path = f'{ints_path}/{options["backend_name"]}{options["noise_model_name"]}_{i}'
+        
+        rdm_path = f'{maindir}/{options["backend_name"]}{options["noise_model_name"]}_{i}/{r}'
         if not os.path.exists(rdm_path):
             os.makedirs(rdm_path)
+
         os.chdir(rdm_path)
+        
+        vqe_result = run_one_vqe(options) # save `calibration_info.json` in current working folder.
 
-        vqe_result = run_one_vqe(options)
-
-        label = f'{options["backend_name"]}{options["noise_model_name"]}'
-        with open(f'{ints_path}/{label}.dat', 'a') as file:
+        with open(f'../vqe.dat', 'a') as file:
             file.write(
-                f"{i}  {vqe_result['energy']['data']:.9f}  {vqe_result['t_A']:.7f}  {vqe_result['t_exp']:.7f}  {vqe_result['c1sq']:.9f}  {vqe_result['c2sq']:.9f}  {vqe_result['avg_x']:.9f}\n"
+                f"{r}    {vqe_result['energy']['data']:.9f}  {vqe_result['t_A']:.7f}  {vqe_result['t_exp']:.7f}  {vqe_result['c1sq']:.9f}  {vqe_result['c2sq']:.9f}  {vqe_result['avg_x']:.9f} \n"
             )
+            
+        label = f'{options["backend_name"]}{options["noise_model_name"]}'
+        with open(f'{r_path}/{label}.dat', 'a') as file:
+            file.write(f"{label}_{i}    {vqe_result['energy']['data']}\n")
+
 
         rdms = {key: vqe_result[key] for key in ['energy', 'gamma1', 'gamma2']}
         with open(f'rdms.json', 'w') as file:
@@ -449,29 +444,56 @@ def run(options, i=0):
 
         os.chdir(maindir)
 
+        if 'hamiltonian' in additional_info.keys():
+            evals, _ = np.linalg.eigh(additional_info['hamiltonian'])
+            ## Add scalar energies
+            evals += [additional_info['scalar_e']] * len(evals)
+            e_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0
+            print(f'\n   ==> (oq_map.json) Exact results for r = {r} <== ')
+            print(f'evals = {evals}\ne_analytic = -np.sqrt(c_z**2 + c_x**2) + c_0 = {e_analytic}')
+            print(f'e_analytic - evals[0] = {e_analytic-evals[0]:.12f}\n')
 
+
+            
 if __name__ == "__main__":
     from qiskit import Aer, IBMQ
-    IBMQ.load_account()
-    provider = IBMQ.get_provider(project='vqe-dsrg-hardwar') # main
+    IBMQ.load_account()  
     
-    options = { 
-        'backend': "ibmq_belem"   , 
-        'n_shots': 20000  ,      
-        'use_dressed_h': True    ,
-        ### following options can be commented out
-        'do_readout_calibration': True    ,
-        'skip_3pt_quadrature': True       ,
-#         'device_for_noise_model': provider.get_backend('ibmq_belem')   ,
+    options = {  
+        'provider_str': 'vqe-dsrg-hardwar' ,
+        'backend': None ,
+        'n_shots': 20000 ,
+        'ints_dir': None ,
+        'do_readout_calibration': True  ,  
+        'skip_3pt_quadrature': True  ,
+        'use_dressed_h': True ,
+#         'device_for_noise_model': None  , # name_str
     }
+    
+    # Update `options` form external file
+    options_arr = np.genfromtxt(fname='options.txt', dtype='unicode')
+    for line in options_arr:
+        key, val = line
+        if key in ['do_readout_calibration', 'skip_3pt_quadrature', 'use_dressed_h',]:
+            options[key] = bool(options[key])
+        else:
+            options[key] = val       
+    options['n_shots'] = int(options['n_shots'])
+   
+    
+    provider = IBMQ.get_provider(project=options['provider_str'])   
+    
     # change name string to backend object
     backend = Aer.get_backend('qasm_simulator') if options['backend'] == 'qasm_simulator' else provider.get_backend(options['backend']) 
     options['backend'] = backend
     
-#     run(options)
+    if 'device_for_noise_model' in options.keys():
+        if options['device_for_noise_model'] != None:
+            # change name string to backend object
+            options['device_for_noise_model'] = provider.get_backend(options['device_for_noise_model'])       
+    print(f'options=\n{options}') 
     
-#     options['filter'] = get_meas_fitter_object(options) # only for disTS 11 experiments
-    for i in range(3, 11): 
-        run(options, i)
-    
-    
+    run_pec(options)
+                                                                     
+#     for i in range(1, 9): 
+#         run_pec(options, i)
