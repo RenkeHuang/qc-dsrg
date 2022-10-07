@@ -1,7 +1,7 @@
 #!/home/renke/.conda/envs/forte_env/bin/python
 """ 
+Update `options` form external file.
 originally copied from `/home/renke/papers-collaborative/qc-dsrg/results/qc_1q_nftopt.py`
-current version copied from `/home/renke/computations/qc-dsrg/qc_ci_solver.py` 
 """
 
 import numpy as np

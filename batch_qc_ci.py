@@ -1,4 +1,7 @@
 #!/home/renke/.conda/envs/forte_env/bin/python
+""" 
+submit one job to a device with list of circuits [calib_cir1, calib_cir2, cir_z, cir_x,...]
+"""
 
 import numpy as np
 from math import pi
